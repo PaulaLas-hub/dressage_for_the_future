@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to Build Your Horse's Topline — Dressage for the Future">
+<link rel="canonical" href="https://www.dressageforthefuture.com/how-to-build-topline.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<title>How to Build Your Horse's Topline | Dressage for the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F6F3EE;--cream-dark:#EAE5DC;--forest:#1C1C28;--forest-mid:#2A2A3A;--forest-light:#484858;--gold:#3A6FA8;--gold-light:#5A8FCA;--gold-pale:#C5D5E8;--blue:#6B8CAE;--blue-light:#8EC5FF;--bronze:#8B6350;--ink:#1A1A22;--ink-soft:#3C3C4E;--mist:#9A9AAA;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:62px;border-bottom:2px solid var(--gold);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;letter-spacing:.06em;color:var(--cream);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;margin-left:2rem;}
+.nav-links a{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;white-space:nowrap;transition:color .3s;}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--forest);border-top:2px solid var(--gold);min-width:220px;padding:.5rem 0;z-index:200;}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
+.nav-dropdown-menu li{list-style:none;}
+.nav-dropdown-menu a{display:block;padding:.6rem 1.2rem;font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s;}
+.nav-dropdown-menu a:hover{background:var(--forest-mid);color:var(--gold-light);}
+.nav-contact{color:var(--gold)!important;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+.gold-rule{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.article-hero{padding:4.5rem 8% 4.5rem;background:var(--forest);position:relative;}
+.article-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.section-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block;}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--cream);max-width:800px;margin-bottom:1rem;}
+.article-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--gold-pale);opacity:.9;max-width:680px;margin-top:.5rem;}
+.article-date{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.18em;color:var(--mist);text-transform:uppercase;margin-top:1.2rem;display:block;}
+.article-body{max-width:740px;margin:0 auto;padding:5rem 8%;}
+.article-body p{margin-bottom:1.6rem;color:var(--ink-soft);}
+.article-body h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--forest);margin:3.5rem 0 1.2rem;line-height:1.2;border-left:2px solid var(--gold);padding-left:1.2rem;}
+.article-body h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--forest);margin:2.5rem 0 .8rem;}
+.article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--cream-dark);font-style:italic;color:var(--ink-soft);}
+.article-body ul,.article-body ol{margin:1rem 0 1.6rem 2rem;color:var(--ink-soft);}
+.article-body li{margin-bottom:.5rem;}
+.article-body a{color:var(--forest);border-bottom:1px solid var(--gold);text-decoration:none;transition:color .3s;}
+.article-body a:hover{color:var(--gold);}
+.pull-quote{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;font-weight:300;color:var(--forest);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:2rem 0;margin:3rem 0;line-height:1.5;}
+.back-link{display:inline-flex;align-items:center;gap:.6rem;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:2.5rem;border-bottom:1px solid transparent;transition:border-color .3s;}
+.back-link:hover{border-bottom-color:var(--gold);}
+.next-prev{background:var(--forest);padding:3rem 8%;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;}
+.np-item{text-decoration:none;}
+.np-label{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:.4rem;}
+.np-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--gold-pale);display:block;}
+.np-item:hover .np-title{color:var(--gold-light);}
+.np-right{text-align:right;}
+footer{background:var(--ink);padding:3.5rem 8% 2.5rem;}
+.footer-inner{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(58,111,168,.15);margin-bottom:1.5rem;}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:.5rem;}
+.footer-brand p{font-size:.9rem;color:var(--mist);max-width:380px;line-height:1.65;}
+.footer-nav h4{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.footer-nav ul{list-style:none;}
+.footer-nav li{margin-bottom:.5rem;}
+.footer-nav a{font-size:.9rem;color:var(--mist);text-decoration:none;transition:color .3s;}
+.footer-nav a:hover{color:var(--gold-pale);}
+.footer-bottom{display:flex;justify-content:space-between;font-size:.7rem;color:var(--mist);font-family:'Cinzel',serif;letter-spacing:.1em;opacity:.4;flex-wrap:wrap;gap:.5rem;}
+@media(max-width:800px){
+  nav{padding:0 1.5rem;}.nav-links{display:none;}
+  .article-hero{padding:7rem 6% 3rem;}.article-body{padding:3.5rem 6%;}
+  .next-prev{flex-direction:column;gap:1.5rem;}
+  .footer-inner{flex-direction:column;}.footer-bottom{flex-direction:column;}
+}
+.essay-hero-img{width:100%;max-height:440px;overflow:hidden;line-height:0;margin-top:62px;}
+.essay-hero-img img{width:100%;height:280px;object-fit:cover;object-position:center 50%;display:block;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Dressage for the Future</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+    <li><a href="research.html">Research</a></li>
+        
+    <li><a href="correspondence.html">Correspondence</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="essay-hero-img">
+  <img src="images/essay-dalera-tokyo.jpg" alt="Double Olympic Gold Medal winner Dalera at the trot-up at the Tokyo Olympics 2020">
+</div>
+<div class="article-hero">
+  <span class="section-label">Essay</span>
+  <h1 class="article-title">How to Build Your Horse's Topline</h1>
+  <p class="article-subtitle">The answer is not in the arena.</p>
+  <span class="article-date">Jun 24, 2026</span>
+</div>
+<div class="gold-rule"></div>
+
+<div class="article-body">
+  <a href="essays.html" class="back-link">&larr; All Essays</a>
+
+<p>Every equestrian magazine has published this article. The correct exercises. The right contact. The appropriate collection. The transitions that will, with sufficient repetition, produce the muscular topline you are trying to build.</p>
+
+<p>Most of it is not wrong. Some of it is genuinely useful.</p>
+
+<p>But almost none of it mentions the twenty-three hours.</p>
+
+<h2>The Other Twenty-Three Hours</h2>
+
+<p>We ride, on average, for one hour a day. Sometimes less. Occasionally more. That hour is where we focus our attention, our training philosophy, our anxiety about progress.</p>
+
+<p>The horse lives in the other twenty-three.</p>
+
+<p>In those twenty-three hours, the horse does something that dressage culture has not adequately reckoned with: it moves. Or it doesn't. And that decision — the one made by the horse, in the paddock, without us — does more to determine topline development than almost anything we do under saddle.</p>
+
+<p>Horses in large paddocks with other horses move constantly. They walk, trot, canter, play, squabble, roll, stretch, rear, spin, and gallop in ways that no training programme has ever successfully replicated. They do this for hours, in varied terrain, at self-selected speeds, without compression of the neck or restriction of the hindquarters. The musculature that develops from this kind of movement is not the tense, braced, over-trained muscle of a horse who works hard for one hour and then stands in a stable for the rest of the day. It is long, elastic, and genuinely strong.</p>
+
+<p>If you want to build your horse's topline, the most important question is not what exercises you do in the arena. It is how much space, time, and company your horse has access to when you are not there.</p>
+
+<h2>Arousal</h2>
+
+<p>There is something else that happens in the paddock that is almost never mentioned in the topline literature.</p>
+
+<p>Horses become aroused. They get excited. They play. They chase and are chased. They find the gallop not as a measured working canter but as something they chose because the conditions were right and the body wanted it.</p>
+
+<p>Arousal changes the way a horse moves. The neck telescopes forward and up. The back swings. The hindquarters engage. The whole body organises itself differently under the influence of positive emotional states than it does under the influence of compliance or learned obedience.</p>
+
+<p>We know from affective neuroscience that the emotional state of an animal influences its motor patterns. A horse in a state of SEEKING — curious, engaged, forward-going in the truest sense — moves differently to a horse in a state of suppression or low-grade fear. The first horse builds topline. The second horse builds tension.</p>
+
+<p>This is not metaphor. The muscles that swing a back and elevate a neck are not the same muscles that brace against discomfort or compress under pressure. Genuine topline requires genuine relaxation beneath it, and that relaxation is partly an emotional phenomenon, not just a physical one.</p>
+
+<p class="pull-quote">A horse in a state of SEEKING moves differently to a horse in a state of suppression. The first horse builds topline. The second horse builds tension.</p>
+
+<h2>The Uncomfortable Observation</h2>
+
+<p>Horses that live in small paddocks, alone or with minimal company, with restricted movement and limited environmental stimulation, tend to have poorer toplines than horses who live in large herds on varied terrain. Even when the former are ridden more intensively and more skillfully than the latter.</p>
+
+<p>This is not universally true. There are exceptions in both directions. But as a general pattern it is consistent enough to be worth naming directly.</p>
+
+<p>The uncomfortable corollary is that some horses that appear to have good toplines — that look muscled and developed — are carrying the kind of muscle that comes from tension, not elasticity. It is possible to build muscle through chronic bracing. The horse's body will adapt to the demands placed on it. But the topline that results from a horse that is consistently tense, restricted, or anxious in its work is a different structure from the one that results from a horse that moves freely, lives well, and is brought into work with its basic ethological needs met.</p>
+
+<p>A judge at a competition cannot always tell the difference. But a bodyworker can. And the horse knows.</p>
+
+<h2>Safety Is Not Wellbeing</h2>
+
+<p>Much of the argument against free movement — large paddocks, herd living, the kind of lifestyle that produces genuine topline — is framed as a safety concern. Horses get injured. They play too hard. They damage their legs on uneven ground. They are easier to manage when contained.</p>
+
+<p>These concerns are not invented. Horses do get injured in paddocks. Herd dynamics can be dangerous. And for horses with certain histories or health conditions, restricted management may be genuinely necessary.</p>
+
+<p>But safety is not the same as wellbeing. A horse that is safe from paddock injury and simultaneously deprived of movement, company, and the expression of its natural behaviour is not a well horse. It is a contained horse. The muscle it lacks — and the emotional flatness that often accompanies that containment — is the cost of that management decision, even if the decision is sometimes the right one to make.</p>
+
+<p>We are very good, in equestrian culture, at talking about what horses need in the arena. We are much less comfortable talking about what they need in the other twenty-three hours. Partly because it implicates management practices that are expensive and difficult to change. Partly because the answer, when you follow it to its conclusion, is sometimes more space, more company, and more risk than we are currently comfortable providing.</p>
+
+<h2>A Practical Suggestion</h2>
+
+<p>If your horse's topline is not developing despite consistent, correct work, the first thing to examine is not the work. It is the life.</p>
+
+<p>How much movement does your horse get outside of the arena? How much social contact? How much space? How much opportunity for arousal, play, and the kind of self-directed locomotion that produces genuine muscular development?</p>
+
+<p>The arena hour matters. Good training matters. Correct contact and appropriate engagement of the hindquarters matter. But these things are multiplied when the horse arrives at them with a body that has been moving freely for twenty-three hours, and diminished when the horse arrives at them from a small stable, alone, without sufficient movement or company to have produced the muscular foundation that good work requires.</p>
+
+<p>Sometimes the answer to a poor topline is better training.</p>
+
+<p>Sometimes the answer is simply more horse.</p>
+
+<p>More space. More company. More movement. More life. More of what a horse actually is, living in a body that was designed not for contained perfection but for an open landscape, in a herd, going somewhere.</p>
+
+<p>Build that, and the topline will follow.</p>
+
+</div>
+
+<div style="background:var(--forest);padding:2.5rem 8%;text-align:center;">
+  <p style="font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;">Enjoyed this essay?</p>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--gold-pale);opacity:.85;margin-bottom:1.6rem;max-width:480px;margin-left:auto;margin-right:auto;">Follow Dressage for the Future for new essays and daily research updates.</p>
+  <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+    <a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#128248; Facebook</a>
+    <a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#128247; Instagram</a>
+    <a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#10006; X</a>
+    <a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#129525; Threads</a>
+    <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#9998; Substack</a>
+  </div>
+</div>
+<div class="next-prev">
+  <a href="gaslighting-in-dressage.html" class="np-item">
+    <span class="np-label">← Previous Essay</span>
+    <span class="np-title">Gaslighting in Dressage: Don't Believe Your Eyes</span>
+  </a>
+  <span></span>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dressage for the Future</h3>
+      <p>An independent platform exploring equine welfare, behaviour, motivation, and performance in dressage.</p>
+      <div style="margin-top:1rem;">
+        <div class="footer-social" style="margin-top:1.2rem;">
+        <p style="font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Follow Dressage for the Future</p>
+        <div style="display:flex;flex-direction:column;gap:.4rem;">
+          <a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128248; Facebook</a>
+          <a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128247; Instagram</a>
+          <a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#10006; X</a>
+          <a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#129525; Threads</a>
+          <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#9998; Substack</a>
+        </div>
+        <p style="font-family:'Cinzel',serif;font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);opacity:.45;margin-top:.8rem;">Research &middot; Essays &middot; Daily Updates &middot; Horse Welfare</p>
+      </div>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="correspondence.html">Correspondence</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Dressage for the Future</span>
+    <span>Canberra, Australia</span>
+  </div>
+</footer>
+</body>
+</html>

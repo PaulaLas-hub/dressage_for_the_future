@@ -1,0 +1,200 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/dressage-site
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+
+  - name: "book"
+    label: "The Book — Chapters"
+    files:
+      - label: "Preface: The Day I Took the Bit Out"
+        name: "book-preface"
+        file: "book-preface.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 1: Before the Contact"
+        name: "book-ch1"
+        file: "book-ch1.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 2: The Great Contradiction"
+        name: "book-ch2"
+        file: "book-ch2.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 3: The Military Machine"
+        name: "book-ch3"
+        file: "book-ch3.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 4: One Hand to Two"
+        name: "book-ch4"
+        file: "book-ch4.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 5: The Kür"
+        name: "book-ch5"
+        file: "book-ch5.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 6: The Silenced Mouth"
+        name: "book-ch6"
+        file: "book-ch6.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 7: Descartes' Horse"
+        name: "book-ch7"
+        file: "book-ch7.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 8: The Physics"
+        name: "book-ch8"
+        file: "book-ch8.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 9: Totilas"
+        name: "book-ch9"
+        file: "book-ch9.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 10: Sjef Janssen"
+        name: "book-ch10"
+        file: "book-ch10.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 11: The Bit Is the System"
+        name: "book-ch11"
+        file: "book-ch11.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 12: The Halter and the Paddock"
+        name: "book-ch12"
+        file: "book-ch12.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 13: What the Dutch Already Know"
+        name: "book-ch13"
+        file: "book-ch13.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 14: What Institutions Protect"
+        name: "book-ch14"
+        file: "book-ch14.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Chapter 15: Hawkeye for Horses"
+        name: "book-ch15"
+        file: "book-ch15.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Epilogue: Leo"
+        name: "book-epilogue"
+        file: "book-epilogue.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Main Pages"
+    files:
+      - label: "Future of Dressage (Manifesto)"
+        name: "future-of-dressage"
+        file: "future-of-dressage.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "About"
+        name: "about"
+        file: "about.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Contact"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "blog"
+    label: "Blog Posts"
+    files:
+      - label: "The 1850 Model"
+        name: "the-1850-model"
+        file: "the-1850-model.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "His Mouth"
+        name: "his-mouth-blog"
+        file: "his-mouth-blog.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "But Is It Classical?"
+        name: "but-is-it-classical"
+        file: "but-is-it-classical.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "A Faulty Premise"
+        name: "a-faulty-premise"
+        file: "a-faulty-premise.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "Totilas"
+        name: "totilas"
+        file: "totilas.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+      - label: "The Patience Pole"
+        name: "the-patience-pole"
+        file: "the-patience-pole.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}

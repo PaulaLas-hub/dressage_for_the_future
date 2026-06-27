@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conflict Behaviour — signals that emerge when a horse faces competing motivations it cannot resolve. A concept in the Teleonomic Fulfilment framework.">
+<link rel="canonical" href="https://www.dressageforthefuture.com/concepts/conflict-behaviour.html">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Conflict Behaviour | Dressage for the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F6F3EE;--cream-dark:#EAE5DC;--cream-panel:#EFEBE3;--forest:#1C1C28;--forest-mid:#20202E;--gold:#3A6FA8;--gold-light:#5A8FCA;--gold-pale:#C5D5E8;--gold-rule:rgba(58,111,168,0.28);--ink:#1A1A22;--ink-soft:#3C3C4E;--mist:#9A9AAA;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:62px;border-bottom:2px solid var(--gold);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;letter-spacing:.06em;color:var(--cream);text-decoration:none;white-space:nowrap;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;margin-left:2rem;}
+.nav-links a{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;transition:color .3s;}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-contact{color:var(--gold)!important;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+.concept-hero{background:var(--forest);margin-top:62px;padding:7rem 8% 5rem;position:relative;}
+.concept-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.breadcrumb{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-bottom:2.5rem;display:flex;align-items:center;gap:.8rem;}
+.breadcrumb a{color:var(--gold);text-decoration:none;transition:color .25s;}
+.breadcrumb a:hover{color:var(--gold-pale);}
+.breadcrumb span{opacity:.4;}
+.concept-label{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.2rem;}
+.concept-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,6rem);font-weight:300;line-height:1;color:var(--cream);margin-bottom:1.5rem;}
+.concept-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2vw,1.5rem);font-style:italic;font-weight:300;color:var(--gold-pale);opacity:.85;max-width:600px;line-height:1.5;}
+.section{padding:6rem 8%;}
+.section--cream{background:var(--cream);}
+.section--panel{background:var(--cream-panel);}
+.section--dark{background:var(--forest);color:var(--cream);}
+.section-inner{max-width:760px;margin:0 auto;}
+.label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;line-height:1.15;margin-top:.7rem;margin-bottom:1.8rem;}
+.section--dark .section-title{color:var(--cream);}
+.prose p{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.9;color:var(--ink-soft);margin-bottom:1.5rem;}
+.prose p:last-child{margin-bottom:0;}
+.section--dark .prose p{color:var(--gold-pale);opacity:.82;}
+.pull-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2.5vw,1.75rem);font-weight:300;font-style:italic;line-height:1.5;color:var(--ink);border-left:3px solid var(--gold);padding:1rem 0 1rem 2rem;margin:2.5rem 0;}
+.concept-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(58,111,168,.35);transition:color .25s,border-color .25s;font-style:italic;}
+.concept-link:hover{color:var(--gold-light);border-color:var(--gold-light);}
+.def-box{background:rgba(58,111,168,.07);border:1px solid rgba(58,111,168,.2);border-left:3px solid var(--gold);padding:2rem 2.2rem;margin:2.5rem 0;}
+.def-box .label{margin-bottom:.8rem;}
+.def-box p{font-family:'EB Garamond',serif;font-size:.95rem;color:var(--ink-soft);line-height:1.75;}
+.developing-notice{margin-top:3rem;padding:1.5rem 2rem;border:1px solid rgba(58,111,168,.15);background:rgba(58,111,168,.04);display:flex;gap:1.2rem;align-items:flex-start;}
+.developing-notice__dot{width:8px;height:8px;border-radius:50%;background:var(--gold);opacity:.5;margin-top:.5rem;flex-shrink:0;}
+.developing-notice p{font-family:'EB Garamond',serif;font-size:.9rem;color:var(--mist);line-height:1.65;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1px;background:rgba(58,111,168,.1);border:1px solid rgba(58,111,168,.15);margin-top:2rem;}
+.related-card{background:var(--cream);padding:1.4rem 1.5rem;text-decoration:none;color:inherit;transition:background .2s;display:block;}
+.related-card:hover{background:var(--cream-dark);}
+.related-card__title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--gold);margin-bottom:.3rem;}
+.related-card__desc{font-family:'EB Garamond',serif;font-size:.8rem;color:var(--mist);line-height:1.5;}
+.related-essays{margin-top:2rem;}
+.essay-ref{padding:1.2rem 0;border-bottom:1px solid rgba(58,111,168,.1);text-decoration:none;color:inherit;display:block;transition:padding-left .2s;}
+.essay-ref:hover{padding-left:.5rem;}
+.essay-ref:last-child{border-bottom:none;}
+.essay-ref__title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.2rem;}
+.essay-ref:hover .essay-ref__title{color:var(--gold);}
+.essay-ref__tag{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mist);}
+.back-link{display:inline-flex;align-items:center;gap:.6rem;font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:3rem;transition:color .25s;}
+.back-link:hover{color:var(--ink);}
+.back-link::before{content:'←';font-family:serif;font-size:1rem;letter-spacing:0;}
+.rule{height:1px;background:linear-gradient(to right,transparent,var(--gold-rule),transparent);border:none;margin:0;}
+.rule--edge{background:rgba(58,111,168,.12);}
+footer{background:var(--ink);padding:3.5rem 8% 2.5rem;}
+.footer-inner{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(58,111,168,.15);margin-bottom:1.5rem;}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:.5rem;}
+.footer-tagline-brand{font-style:normal;opacity:.9;font-size:1rem;letter-spacing:.02em;color:var(--gold-pale);}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:var(--gold-pale);opacity:.65;margin-bottom:.6rem;display:block;}
+.footer-brand p{font-size:.9rem;color:var(--mist);max-width:380px;line-height:1.65;}
+.footer-nav h4{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.footer-nav ul{list-style:none;}
+.footer-nav li{margin-bottom:.5rem;}
+.footer-nav a{font-size:.9rem;color:var(--mist);text-decoration:none;transition:color .3s;}
+.footer-nav a:hover{color:var(--gold-pale);}
+.footer-bottom{display:flex;justify-content:space-between;font-size:.7rem;color:var(--mist);font-family:'Cinzel',serif;letter-spacing:.1em;opacity:.4;flex-wrap:wrap;gap:.5rem;}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.fade-up{opacity:1;transform:none;transition:none;}}
+@media(max-width:900px){nav{padding:0 1.5rem;}.nav-links{display:none;}.section{padding:4.5rem 6%;}.concept-hero{padding:5.5rem 6% 4rem;}}
+@media(max-width:600px){.footer-inner{flex-direction:column;}.footer-bottom{flex-direction:column;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Dressage for the Future</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+    <li><a href="research.html">Research</a></li>
+        
+    <li><a href="correspondence.html">Correspondence</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="concept-hero">
+  <div class="breadcrumb">
+    <a href="../teleonomic-fulfilment.html">Teleonomic Fulfilment</a>
+    <span>/</span>
+    <span style="color:var(--gold-pale)">Conflict Behaviour</span>
+  </div>
+  <span class="concept-label">Concept</span>
+  <h1 class="concept-title">Conflict Behaviour</h1>
+  <p class="concept-subtitle">Behavioural responses arising when competing motivations cannot be simultaneously resolved.</p>
+</div>
+
+<hr class="rule">
+
+<section class="section section--cream">
+  <div class="section-inner">
+    <a href="../teleonomic-fulfilment.html" class="back-link fade-up">Back to Teleonomic Fulfilment</a>
+
+    <div class="fade-up">
+      <span class="label">Definition</span>
+      <h2 class="section-title">Conflict Behaviour</h2>
+    </div>
+
+    <div class="def-box fade-up">
+      <span class="label">Key Term</span>
+      <p><strong>Conflict behaviour</strong> — behavioural expression arising when an animal faces two or more competing motivations that cannot be simultaneously satisfied, or when it is unable to perform a behaviour it is motivated to perform. In horses, common conflict behaviours include tail-swishing, ear-pinning, head-tilting, teeth-grinding, irregular rhythm, resistance to rein contact, explosive or unpredictable movement, and 'napping'. These are not disobedience. They are signals.</p>
+    </div>
+
+    <div class="prose fade-up">
+      <p>Conflict behaviour is one of the most important concepts in equine welfare science because it sits at the boundary between what we see and what is actually happening. A horse that resists the rein is typically described in training terms: it is 'above the bit', 'behind the bit', 'not through', 'not accepting'. These are descriptions of the biomechanical output. They say nothing about what is generating it. The generating factor may be pain, fear, confusion, physical inability, or the simultaneous activation of competing motivations that the horse cannot resolve.</p>
+      <p>The most common conflict in the ridden horse is the simultaneous demand to go forward and the simultaneous restriction of that forward movement through rein pressure. The horse is driven by leg and held by hand. Both signals are applied at the same time. The horse cannot satisfy both. It is being asked to do something contradictory, and the conflict behaviour that results — tension, irregularity, resistance — is the horse's behavioural expression of an impossible situation.</p>
+    </div>
+
+    
+
+    <div class="prose fade-up">
+      <p>Conflict behaviour is a signal worth reading rather than a problem to be corrected. In the Teleonomic Fulfilment framework, conflict behaviour is understood as an indicator that the horse's motivational system is under stress — that it is facing demands it cannot resolve, that its agency is being blocked, or that it is in pain. A training system that responds to conflict behaviour by increasing pressure is a system that is misreading its most important feedback.</p>
+    </div>
+
+    <div class="developing-notice fade-up">
+      <div class="developing-notice__dot"></div>
+      <p>
+        This concept page is being developed. Further content — including neurobiological
+        foundations, research citations, and cross-links to essays — will be added as
+        the knowledge base grows.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule rule--edge">
+
+<section class="section section--panel">
+  <div class="section-inner">
+    <div class="fade-up">
+      <span class="label">Related Concepts</span>
+      <h2 class="section-title">See also</h2>
+    </div>
+    <div class="related-grid fade-up">
+      <a href="agency.html" class="related-card"><div class="related-card__title">Agency</div><p class="related-card__desc">The blocked agency that generates conflict behaviour.</p></a>
+      <a href="defensive-movement.html" class="related-card"><div class="related-card__title">Defensive Movement</div><p class="related-card__desc">One form of unresolvable conflict in the trained horse.</p></a>
+      <a href="state-dependent-movement.html" class="related-card"><div class="related-card__title">State-dependent Movement</div><p class="related-card__desc">The emotional states that produce conflict-driven movement.</p></a>
+      <a href="pressure-pleasure-play.html" class="related-card"><div class="related-card__title">Pressure, Pleasure, Play</div><p class="related-card__desc">Competing motivational systems as a source of conflict.</p></a>
+      <a href="telos.html" class="related-card"><div class="related-card__title">Telos</div><p class="related-card__desc">The evolved nature whose expression conflict behaviour disrupts.</p></a>
+    </div>
+
+    <div style="margin-top:3.5rem;" class="fade-up">
+      <span class="label">Related Essays</span>
+      <h2 class="section-title">Essays using this concept</h2>
+    </div>
+    <div class="related-essays fade-up">
+      <a href="../the-myth-of-forward.html" class="essay-ref"><div class="essay-ref__title">The Myth of Forward</div><span class="essay-ref__tag">June 2026</span></a>
+      <a href="../performance-is-not-proof-of-welfare.html" class="essay-ref"><div class="essay-ref__title">Performance is Not Proof of Welfare</div><span class="essay-ref__tag">June 2026</span></a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dressage for the Future</h3>
+      <span class="footer-tagline footer-tagline-brand">Dressage and Horsemanship for the Age of Intelligence</span>
+      <span class="footer-tagline">Rethinking dressage through science, welfare, and learning theory.</span>
+      <p>An independent research and advocacy platform.</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Framework</h4>
+      <ul>
+        <li><a href="../teleonomic-fulfilment.html">Teleonomic Fulfilment</a></li>
+        <li><a href="../teleonomic-fulfilment-index.html">Fulfilment Index</a></li>
+        <li><a href="../articles.html">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../essays.html">Essays</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Dressage for the Future</span>
+    <span>Canberra, Australia</span>
+  </div>
+</footer>
+
+<script>
+(function(){if(!('IntersectionObserver' in window)){document.querySelectorAll('.fade-up').forEach(el=>el.classList.add('visible'));return;}
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));})();
+</script>
+</body>
+</html>
