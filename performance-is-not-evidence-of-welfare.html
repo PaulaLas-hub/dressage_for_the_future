@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Affective state in horses — Dressage for the Future">
+<link rel="canonical" href="https://www.dressageforthefuture.com/performance-is-not-evidence-of-welfare.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<title>Performance Is Not Evidence of Welfare | Dressage for the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F6F3EE;--cream-dark:#EAE5DC;--forest:#1C1C28;--forest-mid:#2A2A3A;--forest-light:#484858;--gold:#3A6FA8;--gold-light:#5A8FCA;--gold-pale:#C5D5E8;--blue:#6B8CAE;--blue-light:#8EC5FF;--bronze:#8B6350;--ink:#1A1A22;--ink-soft:#3C3C4E;--mist:#9A9AAA;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:62px;border-bottom:2px solid var(--gold);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;letter-spacing:.06em;color:var(--cream);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;margin-left:2rem;}
+.nav-links a{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;white-space:nowrap;transition:color .3s;}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--forest);border-top:2px solid var(--gold);min-width:220px;padding:.5rem 0;z-index:200;}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
+.nav-dropdown-menu li{list-style:none;}
+.nav-dropdown-menu a{display:block;padding:.6rem 1.2rem;font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s;}
+.nav-dropdown-menu a:hover{background:var(--forest-mid);color:var(--gold-light);}
+.nav-contact{color:var(--gold)!important;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+.gold-rule{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.article-hero{padding:4.5rem 8% 4.5rem;background:var(--forest);position:relative;}
+.article-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.section-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block;}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--cream);max-width:800px;margin-bottom:1rem;}
+.article-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--gold-pale);opacity:.9;max-width:680px;margin-top:.5rem;}
+.article-date{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.18em;color:var(--mist);text-transform:uppercase;margin-top:1.2rem;display:block;}
+.article-body{max-width:740px;margin:0 auto;padding:5rem 8%;}
+.article-body p{margin-bottom:1.6rem;color:var(--ink-soft);}
+.article-body h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--forest);margin:3.5rem 0 1.2rem;line-height:1.2;border-left:2px solid var(--gold);padding-left:1.2rem;}
+.article-body h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--forest);margin:2.5rem 0 .8rem;}
+.article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--cream-dark);font-style:italic;color:var(--ink-soft);}
+.article-body ul,.article-body ol{margin:1rem 0 1.6rem 2rem;color:var(--ink-soft);}
+.article-body li{margin-bottom:.5rem;}
+.article-body a{color:var(--forest);border-bottom:1px solid var(--gold);text-decoration:none;transition:color .3s;}
+.article-body a:hover{color:var(--gold);}
+.pull-quote{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;font-weight:300;color:var(--forest);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:2rem 0;margin:3rem 0;line-height:1.5;}
+.back-link{display:inline-flex;align-items:center;gap:.6rem;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:2.5rem;border-bottom:1px solid transparent;transition:border-color .3s;}
+.back-link:hover{border-bottom-color:var(--gold);}
+.blog-author{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;}
+.next-prev{background:var(--forest);padding:3rem 8%;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;}
+.np-item{text-decoration:none;}
+.np-label{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:.4rem;}
+.np-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--gold-pale);display:block;}
+.np-item:hover .np-title{color:var(--gold-light);}
+.np-right{text-align:right;}
+footer{background:var(--ink);padding:3.5rem 8% 2.5rem;}
+.footer-inner{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(58,111,168,.15);margin-bottom:1.5rem;}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:.5rem;}
+.footer-brand p{font-size:.9rem;color:var(--mist);max-width:380px;line-height:1.65;}
+.footer-nav h4{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.footer-nav ul{list-style:none;}
+.footer-nav li{margin-bottom:.5rem;}
+.footer-nav a{font-size:.9rem;color:var(--mist);text-decoration:none;transition:color .3s;}
+.footer-nav a:hover{color:var(--gold-pale);}
+.footer-bottom{display:flex;justify-content:space-between;font-size:.7rem;color:var(--mist);font-family:'Cinzel',serif;letter-spacing:.1em;opacity:.4;flex-wrap:wrap;gap:.5rem;}
+@media(max-width:800px){
+  nav{padding:0 1.5rem;}.nav-links{display:none;}
+  .article-hero{padding:7rem 6% 3rem;}.article-body{padding:3.5rem 6%;}
+  .next-prev{flex-direction:column;gap:1.5rem;}
+  .footer-inner{flex-direction:column;}.footer-bottom{flex-direction:column;}
+}
+
+.essay-hero-img{width:100%;max-height:440px;overflow:hidden;line-height:0;margin-top:62px;}
+.essay-hero-img img{width:100%;height:280px;object-fit:cover;object-position:center 50%;display:block;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Dressage for the Future</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+    <li><a href="research.html">Research</a></li>
+        
+    <li><a href="correspondence.html">Correspondence</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="essay-hero-img">
+  <img src="images/essay-bay-arena.jpg" alt="">
+</div>
+<div class="article-hero">
+  <span class="section-label">Essay</span>
+  <h1 class="article-title">Performance Is Not Evidence of Welfare</h1>
+  <p class="article-subtitle">Affective state in horses</p>
+  <span class="article-date">May 24, 2026</span>
+</div>
+<div class="gold-rule"></div>
+
+<div class="article-body">
+  <a href="essays.html" class="back-link">&larr; All Essays</a>
+  <p class="substack-note" style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);margin-bottom:2.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--cream-dark);">Originally published on <a href="https://dressageforthefuture.substack.com/p/performance-is-not-evidence-of-welfare" target="_blank" rel="noopener" style="color:var(--mist);border-bottom:1px solid var(--mist);">Substack</a></p>
+<p>There is an assumption that runs through almost all of modern dressage: that if you organise the body correctly, everything else will follow. Ride the horse long and low and he will relax. Create thrust and contain it and you will produce impulsion. Get the posture, rhythm, and mechanics right, and the training must be right.</p>
+<p>Winning horses are happy horses.</p>
+<p>But this rests on a deeper assumption that is almost never questioned — that movement can be interpreted without reference to the horse&#x27;s internal state.</p>
+<p>It cannot.</p>
+<p>Every movement a horse produces is shaped not only by its physical structure, but by its affective state — its underlying emotional and neurological condition in that moment. Not &quot;emotion&quot; in the casual sense, but something more fundamental: the combination of arousal and valence that determines how the horse is experiencing its environment. Whether the horse is calm or highly activated, and whether that experience is positive or negative, are not background details. They are organising forces.</p>
+<p>They determine what the horse pays attention to, how it processes information, how it recruits its muscles, and how it learns. They determine the movement you see.</p>
+<p>This is where dressage begins to fail.</p>
+<p>Two horses can produce remarkably similar movement from completely different states. One is attentive, curious, and able to predict what is happening. Its body is organised around that stability. The movement is fluid, elastic, and sustainable. The energy feels available, not forced.</p>
+<p>The other is uncertain, over-aroused, or managing pressure it does not fully understand. Its body organises differently — through bracing, through containment, through strategies that prioritise stability over freedom. And yet, from the outside, both can look impressive. Both can be described as &quot;engaged.&quot;</p>
+<p>Without a framework for affective state, dressage reduces to the interpretation of surfaces. We describe what the limbs are doing. We evaluate the outline. We reward the picture. But the picture does not tell us why the movement exists — and without that, we are not really seeing the horse.</p>
+<p>This is not a failure of intention. Historically, dressage developed to produce functional horses — balanced, responsive, capable of sustained work. The language reflects that purpose: it describes posture, coordination, and control.</p>
+<p>What it does not clearly describe is state.</p>
+<p>Not because horsemen didn&#x27;t recognise it, but because it was never formalised. It was felt. And what is not clearly defined is easily lost.</p>
+<p>Welfare sits directly in that gap.</p>
+<p>Because welfare is not just the absence of negative experience. It is the presence of positive ones. And dressage, in itself, is not inherently meaningful to a horse. Not the arena. Not the movements. Not the test.</p>
+<p>Meaning has to come from the state the horse is in while doing it.</p>
+<p>Affective state can be understood along two axes: arousal and valence. Arousal refers to the level of activation, from calm to highly stimulated. Valence refers to whether the experience is positive or negative. Together, they determine not just how a horse moves, but how it experiences the work.</p>
+<p>A horse in a low-arousal, positive state is relaxed, attentive, and able to process information. A horse in a high-arousal, negative state may still move powerfully, but its attention is narrowed, its responses are reactive, and its capacity to learn is reduced.</p>
+<p>Both can produce movement.</p>
+<p>Only one supports training.</p>
+<p>This is the missing layer in dressage. We have become highly skilled at shaping the external form of the horse, but far less precise in identifying the internal conditions under which that form is produced.</p>
+<p>And so we see the same pattern again and again: horses that look correct but do not improve; horses that perform but do not develop; horses that comply but are not truly engaged.</p>
+<p>When you begin to look at movement through the lens of affective state, certain things become difficult to ignore — energy that is held, not offered; tension that is not just muscular, but systemic; precision that is achieved, but not sustained.</p>
+<p>And occasionally, the opposite: a horse that is mentally present, forward-thinking, organising itself with quiet confidence. In those moments, the movement changes quality — not because more has been added, but because less is being resisted.</p>
+<p>This is where losgelassenheit begins to make sense. Not as a posture or a checklist item, but as a state — a condition in which the horse is able to release unnecessary tension, process information, and participate in the work.</p>
+<p>It is not simply relaxation.</p>
+<p>It is what makes correct movement possible.</p>
+<p>Until affective state is brought to the centre of the conversation, dressage will continue to operate with an incomplete model of the horse. We will continue to judge what we can see without understanding what produces it, and we will continue to mistake the appearance of correctness for the presence of it.</p>
+<p>Because the question is not only how the horse is moving.</p>
+<p>It is why.</p>
+</div>
+
+<div style="background:var(--forest);padding:2.5rem 8%;text-align:center;">
+  <p style="font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;">Enjoyed this essay?</p>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--gold-pale);opacity:.85;margin-bottom:1.6rem;max-width:480px;margin-left:auto;margin-right:auto;">Follow Dressage for the Future for new essays and daily research updates.</p>
+  <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+    <a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#128248; Facebook</a>
+    <a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#128247; Instagram</a>
+    <a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#10006; X</a>
+    <a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#129525; Threads</a>
+    <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;padding:.6rem .9rem;border:1px solid rgba(197,213,232,.2);">&#9998; Substack</a>
+  </div>
+</div>
+<div class="next-prev"><span></span><span></span></div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dressage for the Future</h3>
+      <p>An independent platform exploring equine welfare, behaviour, motivation, and performance in dressage.</p>
+      <div style="margin-top:1rem;">
+        <div class="footer-social" style="margin-top:1.2rem;">
+        <p style="font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Follow Dressage for the Future</p>
+        <div style="display:flex;flex-direction:column;gap:.4rem;">
+          <a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128248; Facebook</a>
+          <a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128247; Instagram</a>
+          <a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#10006; X</a>
+          <a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#129525; Threads</a>
+          <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#9998; Substack</a>
+        </div>
+        <p style="font-family:'Cinzel',serif;font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);opacity:.45;margin-top:.8rem;">Research &middot; Essays &middot; Daily Updates &middot; Horse Welfare</p>
+      </div>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="correspondence.html">Correspondence</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Dressage for the Future</span>
+    <span>Canberra, Australia</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dressage for the Future — an independent research and advocacy platform exploring equine welfare, affective neuroscience, learning theory, and equestrian sport.">
+<meta property="og:title" content="Dressage for the Future">
+<meta property="og:description" content="Rethinking dressage through science, welfare, and learning theory.">
+<meta property="og:url" content="https://www.dressageforthefuture.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.dressageforthefuture.com/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<title>Dressage for the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6F3EE;
+  --cream-dark:#EAE5DC;
+  --forest:#1C1C28;
+  --forest-mid:#2A2A3A;
+  --forest-light:#484858;
+  --gold:#3A6FA8;
+  --gold-light:#5A8FCA;
+  --gold-pale:#C5D5E8;
+  --blue:#6B8CAE;
+  --blue-light:#8EC5FF;
+  --bronze:#8B6350;
+  --ink:#1A1A22;
+  --ink-soft:#3C3C4E;
+  --mist:#9A9AAA;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--forest);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+
+/* ── NAVIGATION ──────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--forest);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:62px;
+  border-bottom:2px solid var(--gold);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;
+  letter-spacing:.06em;color:var(--cream);text-decoration:none;
+  white-space:nowrap;flex-shrink:0;
+}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;margin-left:2rem;}
+.nav-links a{
+  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold-pale);text-decoration:none;
+  white-space:nowrap;transition:color .3s;
+}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-contact{color:var(--gold)!important;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+
+/* ── HERO — CONCEPT A: EDITORIAL SPLIT ───────────────────────────── */
+.hero{
+  display:grid;
+  grid-template-columns:3fr 2fr;
+  min-height:calc(100vh - 62px);
+  margin-top:62px;
+  background:var(--forest);
+}
+.hero-content{
+  padding:6rem 8% 6rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-right:1px solid rgba(58,111,168,.22);
+}
+.hero-label{
+  font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);
+  display:block;margin-bottom:2rem;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4.2vw,3.4rem);
+  font-weight:300;line-height:1.15;
+  color:var(--cream);
+  max-width:600px;margin-bottom:2rem;
+}
+.hero-rule{
+  width:48px;height:1px;
+  background:var(--gold);
+  margin-bottom:2rem;
+  opacity:.7;
+}
+.hero-sub{
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:1.05rem;
+  color:var(--gold-pale);opacity:.85;
+  max-width:500px;line-height:1.75;
+  margin-bottom:3rem;
+}
+.hero-cta{
+  display:flex;gap:1rem;flex-wrap:wrap;
+}
+.btn-hero{
+  font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;padding:.9rem 2.2rem;
+  background:transparent;color:var(--gold-pale);
+  border:1px solid rgba(197,213,232,.3);
+  text-decoration:none;
+  transition:border-color .3s,color .3s;display:inline-block;
+}
+.btn-hero:hover{border-color:var(--gold-pale);color:var(--cream);}
+
+/* ── IMAGE PANEL ─────────────────────────────────────────────────── */
+.hero-image{
+  position:relative;
+  overflow:hidden;
+}
+.hero-image img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:20% center;
+  display:block;
+  opacity:.88;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────────── */
+footer{background:var(--ink);padding:3.5rem 8% 2.5rem;}
+.footer-inner{
+  display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(58,111,168,.15);
+  margin-bottom:1.5rem;
+}
+.footer-brand h3{
+  font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;
+  color:var(--cream);margin-bottom:.5rem;
+}
+.footer-brand .footer-tagline-brand{font-style:normal;opacity:.9;font-size:1rem;letter-spacing:.02em;color:var(--gold-pale);}
+.footer-tagline{
+  font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;
+  color:var(--gold-pale);opacity:.65;margin-bottom:.6rem;
+  display:block;
+}
+.footer-brand p{font-size:.9rem;color:var(--mist);max-width:380px;line-height:1.65;}
+.footer-nav h4{
+  font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:1rem;
+}
+.footer-nav ul{list-style:none;}
+.footer-nav li{margin-bottom:.5rem;}
+.footer-nav a{font-size:.9rem;color:var(--mist);text-decoration:none;transition:color .3s;}
+.footer-nav a:hover{color:var(--gold-pale);}
+.footer-bottom{
+  display:flex;justify-content:space-between;
+  font-size:.7rem;color:var(--mist);
+  font-family:'Cinzel',serif;letter-spacing:.1em;opacity:.4;
+  flex-wrap:wrap;gap:.5rem;
+}
+
+/* ── JOIN THE CONVERSATION ───────────────────────────────────────── */
+.join-section{background:var(--cream);padding:6rem 8%;border-top:1px solid rgba(58,111,168,.1);}
+.join-inner{max-width:900px;margin:0 auto;}
+.join-label{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.4rem;}
+.join-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--forest);line-height:1.2;margin-bottom:1rem;}
+.join-sub{font-family:'EB Garamond',Georgia,serif;font-size:1rem;color:var(--ink-soft);opacity:.8;max-width:580px;margin-bottom:3rem;line-height:1.75;}
+.platform-table{width:100%;border-collapse:collapse;margin-bottom:3rem;}
+.platform-table th{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:left;padding:.7rem 0;border-bottom:2px solid rgba(58,111,168,.25);}
+.platform-table td{padding:1.1rem 0;border-bottom:1px solid rgba(58,111,168,.1);vertical-align:top;}
+.platform-table tr:last-child td{border-bottom:none;}
+.platform-name{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);}
+.platform-purpose{font-family:'EB Garamond',Georgia,serif;font-size:1rem;color:var(--ink-soft);opacity:.8;padding-left:1rem;}
+.platform-link{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(58,111,168,.3);padding-bottom:1px;transition:border-color .3s;}
+.platform-link:hover{border-color:var(--gold);}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-content{
+    padding:7.5rem 6% 4rem;
+    border-right:none;
+    border-bottom:1px solid rgba(58,111,168,.22);
+    justify-content:flex-start;
+  }
+  .hero-image{min-height:320px;}
+}
+@media(max-width:800px){
+  nav{padding:0 1.5rem;}.nav-links{display:none;}
+  .footer-inner{flex-direction:column;}.footer-bottom{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dressage for the Future</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+    <li><a href="research.html">Research</a></li>
+        
+    <li><a href="correspondence.html">Correspondence</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-label">Dressage for the Future</span>
+    <h1 class="hero-title">Rethinking dressage through science, welfare, and learning theory.</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">An independent research and advocacy platform exploring the intersection of equine welfare, affective neuroscience, learning theory, and equestrian sport.</p>
+    <div class="hero-cta">
+      <a href="essays.html" class="btn-hero">Essays</a>
+      <a href="correspondence.html" class="btn-hero">Correspondence</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="images/neural-horse.jpg" alt="Neural Horse — understanding the horse through welfare science and neuroscience">
+  </div>
+</div>
+
+<!-- JOIN THE CONVERSATION -->
+<section class="join-section">
+  <div class="join-inner">
+    <span class="join-label">Join the Conversation</span>
+    <h2 class="join-title">Follow the work as it develops.</h2>
+    <p class="join-sub">Dressage for the Future is active across five platforms. Each serves a different purpose.</p>
+    <table class="platform-table">
+      <thead>
+        <tr>
+          <th style="width:25%;">Platform</th>
+          <th style="width:55%;">Purpose</th>
+          <th style="width:20%;">Follow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="platform-name">Facebook</span></td>
+          <td><span class="platform-purpose">Discussion and community</span></td>
+          <td><a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" class="platform-link">Follow →</a></td>
+        </tr>
+        <tr>
+          <td><span class="platform-name">Instagram</span></td>
+          <td><span class="platform-purpose">Images, reels and behind the scenes</span></td>
+          <td><a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" class="platform-link">Follow →</a></td>
+        </tr>
+        <tr>
+          <td><span class="platform-name">X</span></td>
+          <td><span class="platform-purpose">Research, commentary and breaking news</span></td>
+          <td><a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" class="platform-link">Follow →</a></td>
+        </tr>
+        <tr>
+          <td><span class="platform-name">Threads</span></td>
+          <td><span class="platform-purpose">Short reflections and conversations</span></td>
+          <td><a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" class="platform-link">Follow →</a></td>
+        </tr>
+        <tr>
+          <td><span class="platform-name">Substack</span></td>
+          <td><span class="platform-purpose">Long-form essays delivered to your inbox</span></td>
+          <td><a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" class="platform-link">Subscribe →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dressage for the Future</h3>
+      <span class="footer-tagline footer-tagline-brand">Dressage and Horsemanship for the Age of Intelligence</span>
+      <span class="footer-tagline">Rethinking dressage through science, welfare, and learning theory.</span>
+      <p>An independent research and advocacy platform.</p>
+      <div class="footer-social" style="margin-top:1.2rem;">
+        <p style="font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Follow Dressage for the Future</p>
+        <div style="display:flex;flex-direction:column;gap:.4rem;">
+          <a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128248; Facebook</a>
+          <a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128247; Instagram</a>
+          <a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#10006; X</a>
+          <a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#129525; Threads</a>
+          <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#9998; Substack</a>
+        </div>
+        <p style="font-family:'Cinzel',serif;font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);opacity:.45;margin-top:.8rem;">Research &middot; Essays &middot; Daily Updates &middot; Horse Welfare</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essays.html">Essays</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="correspondence.html">Correspondence</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Dressage for the Future</span>
+    <span>Canberra, Australia</span>
+  </div>
+</footer>
+</body>
+</html>

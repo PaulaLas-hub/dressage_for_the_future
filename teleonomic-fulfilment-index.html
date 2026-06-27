@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Equine Teleonomic Fulfilment Index | Dressage for the Future</title>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FONTS — Cormorant Garamond (headings) · Cinzel (labels)
+              EB Garamond (body)
+     ═══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   EDIT COLOURS HERE
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --bg:           #1C1C28;   /* page background — dark charcoal-blue  */
+  --bg-panel:     #20202C;   /* inset panels, intro card              */
+  --bg-card:      #1E1E2A;   /* question card background              */
+  --border:       #2A2A3A;   /* thin rule, card border                */
+  --border-dim:   rgba(255,255,255,0.06);
+  --text:         #E8E3D8;   /* primary cream text                    */
+  --text-dim:     #B0AA9C;   /* secondary text                        */
+  --text-muted:   #6A6A7A;   /* captions, micro-copy                  */
+  --blue:         #3A6FA8;   /* Neural Blue — primary accent          */
+  --blue-light:   #5A8FCA;   /* hover / lighter accent                */
+  --blue-pale:    #C5D5E8;   /* very light blue for selected text     */
+  --blue-faint:   rgba(58, 111, 168, 0.12); /* selected bg tint      */
+  --rule:         rgba(58, 111, 168, 0.3);  /* decorative gold rule  */
+  --max-w:        780px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TYPE SCALE
+   ═══════════════════════════════════════════════════════════════ */
+.t-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: block;
+}
+
+.t-domain {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.t-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.t-subheading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.t-body {
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════════════════════ */
+.shell {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 5% 6rem;
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule), transparent);
+  margin: 2.5rem 0;
+  border: none;
+}
+
+.rule-edge {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+  border: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SITE HEADER — edit link href to match live site
+   ═══════════════════════════════════════════════════════════════ */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 5%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.site-logo:hover { opacity: 1; }
+
+.site-back {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.site-back:hover { color: var(--blue-pale); }
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO BAND — title bar beneath nav
+   ═══════════════════════════════════════════════════════════════ */
+.hero-band {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  padding: 3.5rem 5% 2.5rem;
+}
+
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRESS — domain segments
+   ═══════════════════════════════════════════════════════════════ */
+.progress-wrap {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 2.5rem;
+}
+
+.progress-seg {
+  height: 2px;
+  flex: 1;
+  background: var(--border);
+  transition: background 0.3s;
+}
+
+.progress-seg.done    { background: rgba(58,111,168,0.5); }
+.progress-seg.current { background: var(--blue); }
+
+/* ═══════════════════════════════════════════════════════════════
+   QUESTION CARDS
+   ═══════════════════════════════════════════════════════════════ */
+.q-block {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.q-block:last-of-type {
+  border-bottom: none;
+}
+
+.q-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.q-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+}
+
+.q-pillar {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.q-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSE OPTIONS
+   ═══════════════════════════════════════════════════════════════ */
+.opts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.opt {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 0.45rem 0.9rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  text-align: left;
+}
+
+.opt:hover {
+  border-color: rgba(58,111,168,0.5);
+  color: var(--text-dim);
+}
+
+.opt.active {
+  border-color: var(--blue);
+  color: var(--blue-pale);
+  background: var(--blue-faint);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MICRO-COPY / FIELD NOTES
+   ═══════════════════════════════════════════════════════════════ */
+.q-note {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVIGATION BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+.btn-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-dim);
+}
+
+.btn-continue {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue-pale);
+  background: transparent;
+  border: 1px solid rgba(58,111,168,0.4);
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.btn-continue:hover {
+  border-color: var(--blue);
+  background: var(--blue-faint);
+}
+
+.btn-continue:disabled {
+  color: var(--text-muted);
+  border-color: var(--border);
+  cursor: default;
+  background: transparent;
+}
+
+.btn-back {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.btn-back:hover { color: var(--text-dim); }
+
+.answered-count {
+  margin-left: auto;
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESULTS PAGE
+   ═══════════════════════════════════════════════════════════════ */
+.results-header {
+  padding: 3rem 0 0;
+}
+
+.score-line {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin: 0.8rem 0 0.4rem;
+  flex-wrap: wrap;
+}
+
+.score-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1;
+}
+
+.score-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.score-caption {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* radar wrapper */
+.radar-wrap {
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.radar-wrap svg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+}
+
+/* domain breakdown */
+.domain-row {
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.domain-row:last-of-type {
+  border-bottom: none;
+}
+
+.domain-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.domain-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.domain-score {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--blue-pale);
+}
+
+/* thin track */
+.track {
+  height: 1px;
+  background: var(--border);
+  margin: 0.6rem 0 0.9rem;
+  position: relative;
+}
+
+.track-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background: var(--blue);
+  transition: width 0.8s ease;
+}
+
+/* pillar sub-scores */
+.pillars-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.pillar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.pillar-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pillar-value {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.constraint-note {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* reading-the-profile section */
+.reading-section {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-dim);
+}
+
+.reading-section p {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.reading-section p:last-child { margin-bottom: 0; }
+
+/* result actions */
+.result-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.btn-restart {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-restart:hover { color: var(--text-dim); border-color: var(--text-muted); }
+
+.btn-print {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-print:hover { color: var(--text-dim); border-color: var(--text-muted); }
+
+/* ═══════════════════════════════════════════════════════════════
+   INTRO PAGE
+   ═══════════════════════════════════════════════════════════════ */
+.intro-body {
+  padding: 3rem 0;
+}
+
+.intro-lead {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  line-height: 1.85;
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.pillar-table {
+  margin: 2rem 0;
+  border-top: 1px solid var(--border-dim);
+}
+
+.pillar-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-dim);
+  flex-wrap: wrap;
+}
+
+.pillar-term {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-pale);
+  min-width: 100px;
+  padding-top: 0.1rem;
+}
+
+.pillar-def {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.disclaimer-block {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--border);
+  padding: 1.5rem 1.8rem;
+  margin: 2.5rem 0;
+}
+
+.disclaimer-block .t-label {
+  margin-bottom: 0.7rem;
+}
+
+.disclaimer-block p {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.btn-begin {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--blue-pale);
+  background: transparent;
+  border: 1px solid rgba(58,111,168,0.5);
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 1rem;
+  display: inline-block;
+}
+.btn-begin:hover {
+  background: var(--blue-faint);
+  border-color: var(--blue);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATION
+   ═══════════════════════════════════════════════════════════════ */
+.fade-in {
+  animation: fadeUp 0.4s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .fade-in { animation: none; } }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 580px) {
+  .hero-band { padding: 2.5rem 5% 2rem; }
+  .t-domain  { font-size: 2rem; }
+  .t-heading { font-size: 1.5rem; }
+  .score-number { font-size: 2.6rem; }
+  .pillars-row  { gap: 1.2rem; }
+  .btn-row { gap: 1rem; }
+  .pillar-row { gap: 0.7rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════════════════════ */
+@media print {
+  body { background: #fff; color: #1A1A22; }
+  :root {
+    --bg: #fff; --bg-panel: #f4f4f4; --text: #1A1A22;
+    --text-dim: #444; --text-muted: #666; --border: #ccc;
+    --border-dim: #ddd; --blue: #2A5F98; --blue-pale: #2A5F98;
+  }
+  .site-header, .btn-row, .result-actions { display: none; }
+  .hero-band { padding: 1rem 0; }
+  .radar-wrap svg { max-width: 320px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SITE HEADER — edit href to match live domain
+     ═══════════════════════════════════════════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">Dressage for the Future</a>
+    <a href="javascript:history.back()" class="site-back">← Research</a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO BAND — title and subtitle
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="hero-band">
+  <div class="hero-inner">
+    <span class="t-label">Research Instrument</span>
+    <h1 class="t-domain" style="margin-top:0.5rem;">Equine Teleonomic<br>Fulfilment Index</h1>
+    <p class="hero-subtitle">How much of the horse's evolved design is its current environment permitting?</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     APP ROOT — all screens rendered here by JavaScript
+     ═══════════════════════════════════════════════════════════════ -->
+<main id="app" role="main"></main>
+
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   EDIT WORDING — all user-facing text lives here
+   ═══════════════════════════════════════════════════════════════════ */
+const COPY = {
+
+  introLead: "This instrument estimates the degree to which a horse's evolved biological functions remain available under its current management system. It is organised around five domains — Movement & Space, Foraging, Social Life, World Access, and Rest & Autonomy — each assessed across three pillars.",
+
+  scoringNote: "Each domain multiplies its three pillars (Opportunity × Information × Agency), so a significant deficit in any single pillar substantially reduces the domain score. A chain is only as strong as its weakest link.",
+
+  disclaimer: "This is not a welfare verdict, a happiness score, or a measure of care quality. A low score indicates constrained evolutionary opportunity — it does not indicate negligence or harm. Many constraints exist for legitimate reasons of safety, veterinary necessity, land availability, or economics. The purpose of this instrument is reflection and calibration, not judgement.",
+
+  overallCaption: "This figure represents the average of five domain scores, each of which is the product of its Opportunity, Information, and Agency sub-scores. Because the model is multiplicative, these figures are deliberately conservative. The profile shape matters more than the headline number.",
+
+  conservativeNote: "The multiplicative model is intentional. A domain with high opportunity but no agency scores near zero, because the evolved function cannot complete without the capacity to choose. The profile below shows where opportunity is constrained and by what.",
+
+  /* ── EDIT SCORE BAND WORDING ─────────────────────────────── */
+  bands: [
+    { min: 70, label: "High Opportunity",
+      text: "Most of this domain's evolved opportunity remains available under current conditions. Scores in this range are uncommon in managed equine environments." },
+    { min: 45, label: "Moderate Opportunity",
+      text: "A significant portion of this domain's evolved opportunity remains available, with meaningful constraints in at least one pillar." },
+    { min: 25, label: "Constrained",
+      text: "Substantial constraints are present across one or more pillars. This range is common in standard managed environments." },
+    { min: 10, label: "Significantly Constrained",
+      text: "A minority of this domain's evolved opportunity is currently available. The profile below shows which pillar is the primary limiting factor." },
+    { min: 0,  label: "Highly Constrained",
+      text: "Little of this domain's evolved opportunity is currently available. This may reflect necessary management conditions rather than neglect." }
+  ],
+
+  readingTitle: "Reading this profile",
+
+  readingBody: [
+    "This is a measurement of evolved opportunity, not a welfare verdict. A horse may be healthy, cared for, and performing well while showing a constrained TFI profile. These are different things.",
+    "The shape of the profile is more informative than the headline number. A single low domain score points to where evolutionary opportunity is most concentrated and where further investigation may be warranted.",
+    "The primary constraint shown for each domain identifies whether the limiting factor is physical opportunity (does the space or system allow the behaviour?), information (can the horse receive the signals that normally activate the behaviour?), or agency (can the horse choose when, how, and whether to perform it?).",
+    "Some constraints are deliberate and reasonable. Stabling for veterinary recovery, restriction of forage for metabolic conditions, limited turnout due to land or fencing — these are not failures. The instrument does not weigh clinical trade-offs. It measures what is available.",
+    "Low scores in all domains simultaneously suggest a management system that has substantially reduced the horse's access to its own evolved design. High scores in some and low scores in others suggest specific areas where change may be feasible."
+  ]
+};
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   EDIT QUESTIONS — all domains, questions, options, and micro-copy
+   ═══════════════════════════════════════════════════════════════════
+
+   pillar: "opportunity" | "information" | "agency"
+
+   Scoring formulas per domain:
+     D1 Movement:     avg(Q1,Q2,Q3) × Q4 × 100           [O×A only — Q3 is Opportunity]
+     D2 Foraging:     avg(Q5,Q6)    × Q8 × Q7 × 100      [O×I×A]
+     D3 Social Life:  avg(Q9,Q10)   × Q11 × Q12 × 100    [O×I×A]
+     D4 World Access: Q13 × avg(Q14,Q16) × Q15 × 100     [O×I×A]
+     D5 Rest & Auto:  Q17 × Q19 × avg(Q18,Q20) × 100     [O×I×A]
+   ═══════════════════════════════════════════════════════════════════ */
+const TFI_DATA = [
+
+  /* ─────────────────────────────────────────────────────────────
+     DOMAIN 1 — MOVEMENT & SPACE
+     Score: avg(Q1,Q2,Q3) × Q4 × 100
+     Pillars shown: Opportunity, Agency (no Information for this domain)
+     ───────────────────────────────────────────────────────────── */
+  {
+    key:   "Movement & Space",
+    short: "Movement",
+    blurb: "Horses evolved as wide-ranging movers across varied terrain. The capacity for self-directed locomotion — including the ability to reach full speed, vary gait, and remove oneself from perceived threat — is a foundational biological function.",
+    questions: [
+      {
+        id: "mov_1", num: 1, pillar: "opportunity",
+        text: "How much continuous space does your horse have to move freely — not paddock time you arrange, but space that is always available?",
+        options: [
+          ["Stall or yard only",           0     ],
+          ["Small pen (under 0.1 ha)",     0.25  ],
+          ["Medium paddock (0.1–1 ha)",    0.5   ],
+          ["Large field (1–5 ha)",         0.75  ],
+          ["Extensive / open range",       1     ]
+        ]
+      },
+      {
+        id: "mov_2", num: 2, pillar: "opportunity",
+        text: "In a typical day, for how many hours can your horse move freely without waiting for you to let it out?",
+        options: [
+          ["0–3 hours",       0    ],
+          ["4–8 hours",       0.25 ],
+          ["9–14 hours",      0.5  ],
+          ["15–20 hours",     0.75 ],
+          ["Almost all day",  1    ]
+        ]
+      },
+      {
+        id: "mov_3", num: 3, pillar: "opportunity",
+        text: "Can your horse reach a canter or gallop within its living space?",
+        options: [
+          ["Never",                        0    ],
+          ["Rarely (a few times a month)", 0.25 ],
+          ["Some days",                    0.5  ],
+          ["Most days",                    0.75 ],
+          ["Any time it wants",            1    ]
+        ],
+        note: "Horses evolved to cover 30–50 km daily at varied speeds. The capacity to self-initiate a canter or gallop — not just when ridden — reflects whether the living space supports the locomotor system's full functional range."
+      },
+      {
+        id: "mov_4", num: 4, pillar: "agency",
+        text: "If your horse wants to move away from something — another horse, a person, a noise — does it have space to do so?",
+        options: [
+          ["No room at all",                  0    ],
+          ["Very little room",                0.25 ],
+          ["Some room",                       0.5  ],
+          ["Plenty of room",                  0.75 ],
+          ["Ample space always available",    1    ]
+        ],
+        note: "Horses evolved as prey animals whose primary threat response is flight. When there is no room to move away, the flight system activates but cannot complete — a measurable source of sustained low-level activation, even in otherwise calm horses."
+      }
+    ]
+  },
+
+  /* ─────────────────────────────────────────────────────────────
+     DOMAIN 2 — FORAGING
+     Score: avg(Q5,Q6) × Q8 × Q7 × 100
+     ───────────────────────────────────────────────────────────── */
+  {
+    key:   "Foraging",
+    short: "Foraging",
+    blurb: "Horses evolved to feed near-continuously while moving and selecting between plants. The foraging system integrates locomotion, olfactory selection, and temporal patterning. Each of these is measured here.",
+    questions: [
+      {
+        id: "for_1", num: 5, pillar: "opportunity",
+        text: "In a typical 24 hours, for how many hours is grass or hay available for your horse to eat at will?",
+        options: [
+          ["Under 4 hours",   0    ],
+          ["4–8 hours",       0.25 ],
+          ["9–14 hours",      0.5  ],
+          ["15–20 hours",     0.75 ],
+          ["Around the clock",1    ]
+        ]
+      },
+      {
+        id: "for_2", num: 6, pillar: "opportunity",
+        text: "Does your horse ever go more than 4 hours without access to any forage?",
+        options: [
+          ["Several times daily",    0    ],
+          ["Once most days",         0.25 ],
+          ["A few times a week",     0.5  ],
+          ["Rarely",                 0.75 ],
+          ["Never",                  1    ]
+        ],
+        note: "A horse's stomach produces hydrochloric acid continuously — unlike humans, who produce acid primarily in response to food. A gap of more than 4 hours without forage means acid acts on an empty stomach. This is the primary driver of equine gastric ulcer syndrome, which affects the majority of performance horses and a significant proportion of leisure horses."
+      },
+      {
+        id: "for_3", num: 7, pillar: "agency",
+        text: "Can your horse take steps between mouthfuls while eating — moving through its food rather than eating from a fixed spot?",
+        options: [
+          ["Never (fixed spot or hay net)", 0    ],
+          ["Rarely",                        0.25 ],
+          ["Sometimes",                     0.5  ],
+          ["Often",                         0.75 ],
+          ["Almost always",                 1    ]
+        ],
+        note: "Wild horses walk 10–16 km per day while grazing, taking a step between mouthfuls. Moving while foraging is not incidental exercise — it is the natural integration of the locomotor and digestive systems. Feeding from a static point decouples these systems."
+      },
+      {
+        id: "for_4", num: 8, pillar: "information",
+        text: "Can your horse smell and select between different forage types — different grasses, hay varieties, and plants — rather than eating a single delivered feed?",
+        options: [
+          ["Never (one type, no choice)",     0    ],
+          ["Rarely",                          0.25 ],
+          ["Sometimes",                       0.5  ],
+          ["Often",                           0.75 ],
+          ["Always has variety to select from", 1  ]
+        ],
+        note: "Horses are selective grazers with well-developed olfactory systems for evaluating plant quality, secondary compounds, and mineral content. The capacity to smell, investigate, and choose between forage types activates a distinct component of the foraging system that is absent when a single uniform feed is delivered."
+      }
+    ]
+  },
+
+  /* ─────────────────────────────────────────────────────────────
+     DOMAIN 3 — SOCIAL LIFE
+     Score: avg(Q9,Q10) × Q11 × Q12 × 100
+     ───────────────────────────────────────────────────────────── */
+  {
+    key:   "Social Life",
+    short: "Social",
+    blurb: "Horses evolved in stable groups with constant physical proximity, mutual grooming, and long-term social knowledge. The social system depends on contact, information, and the capacity to regulate proximity.",
+    questions: [
+      {
+        id: "soc_1", num: 9, pillar: "opportunity",
+        text: "For how many hours per day can your horse make physical contact with another horse — touching, mutual grooming, or simply standing in close proximity?",
+        options: [
+          ["Never",           0    ],
+          ["Under 2 hours",   0.25 ],
+          ["2–8 hours",       0.5  ],
+          ["9–16 hours",      0.75 ],
+          ["Almost all day",  1    ]
+        ]
+      },
+      {
+        id: "soc_2", num: 10, pillar: "opportunity",
+        text: "Can your horse engage in mutual grooming with another horse — mutual scratching or nibbling along the mane and withers?",
+        options: [
+          ["Never",       0    ],
+          ["Rarely",      0.25 ],
+          ["Sometimes",   0.5  ],
+          ["Most days",   0.75 ],
+          ["Any time",    1    ]
+        ],
+        note: "Mutual grooming measurably lowers heart rate and cortisol in horses. It requires genuine physical proximity and a degree of social trust, and is one of the most reliable indicators of a functional pair bond. Contact across a fence does not constitute mutual grooming."
+      },
+      {
+        id: "soc_3", num: 11, pillar: "information",
+        text: "Has your horse lived with the same companions long enough to know their individual body language, habits, and social signals?",
+        options: [
+          ["Lives alone",                       0    ],
+          ["Companions change frequently",      0.25 ],
+          ["Companions change occasionally",    0.5  ],
+          ["Mostly the same group",             0.75 ],
+          ["Same companions for a year or more",1    ]
+        ],
+        note: "In stable groups, horses develop individualised responses to each other's postural signals — faster and more accurate than between horses with little shared history. A frequently changing group means the social recognition system is perpetually resetting."
+      },
+      {
+        id: "soc_4", num: 12, pillar: "agency",
+        text: "Can your horse choose to be near other horses or move away from them — rather than being in a fixed pen with no choice of proximity?",
+        options: [
+          ["Never (fixed pen, no choice)",  0    ],
+          ["Rarely",                        0.25 ],
+          ["Sometimes",                     0.5  ],
+          ["Often",                         0.75 ],
+          ["Almost always",                 1    ]
+        ],
+        note: "The capacity to regulate social proximity — to approach or withdraw from companions — is a core evolved function in herd animals. When it is structurally impossible because of fixed pens, permanent separation, or permanent forced contact, the social regulation system cannot operate."
+      }
+    ]
+  },
+
+  /* ─────────────────────────────────────────────────────────────
+     DOMAIN 4 — WORLD ACCESS
+     Score: Q13 × avg(Q14,Q16) × Q15 × 100
+     ───────────────────────────────────────────────────────────── */
+  {
+    key:   "World Access",
+    short: "World",
+    blurb: "Horses evolved continuously immersed in weather, terrain, natural light cycles, and a wide sensory landscape. Environmental exposure and novelty are not enrichment preferences — they are the raw inputs on which the thermoregulatory, exploratory, and circadian systems depend.",
+    questions: [
+      {
+        id: "env_1", num: 13, pillar: "opportunity",
+        text: "How much of a typical day is your horse exposed to outdoor conditions — open air, natural light, and direct weather?",
+        options: [
+          ["Under 2 hours",   0    ],
+          ["2–6 hours",       0.25 ],
+          ["7–12 hours",      0.5  ],
+          ["13–20 hours",     0.75 ],
+          ["Around the clock",1    ]
+        ]
+      },
+      {
+        id: "env_2", num: 14, pillar: "information",
+        text: "Can your horse feel weather directly — wind, rain, temperature shifts — or is it largely buffered by rugging and stabling for most of the year?",
+        options: [
+          ["Never feels weather (always rugged or stabled)", 0    ],
+          ["Rarely",                                         0.25 ],
+          ["Sometimes",                                      0.5  ],
+          ["Often",                                          0.75 ],
+          ["Continuously in most conditions",                1    ]
+        ],
+        note: "This question does not address whether rugging is advisable. It asks whether the thermoregulatory system is receiving the sensory inputs it evolved to use. A coat, a circulatory response, and a behavioural repertoire that never encounter weather cannot function as they evolved to — regardless of how well-intentioned the insulation."
+      },
+      {
+        id: "env_3", num: 15, pillar: "agency",
+        text: "Does your horse have clearly distinct zones to choose between — sun, shade, natural shelter, open area — and can it move between them freely?",
+        options: [
+          ["No options (one environment only)",            0    ],
+          ["One fixed option",                             0.25 ],
+          ["Two options available",                        0.5  ],
+          ["Good options",                                 0.75 ],
+          ["Multiple distinct zones, always accessible",   1    ]
+        ],
+        note: "Wild horses spend time in sun, shade, and shelter in patterns that track their thermoregulatory and physiological needs across the day and season. When only one environmental zone is accessible, behavioural thermoregulation — using movement and position to manage temperature — is structurally impossible."
+      },
+      {
+        id: "env_4", num: 16, pillar: "information",
+        text: "How often does your horse encounter something genuinely new — a different location, an unfamiliar object or person, different ground, new smells or sounds?",
+        options: [
+          ["Never (same environment always)",   0    ],
+          ["A few times a year",                0.25 ],
+          ["Monthly",                           0.5  ],
+          ["Weekly",                            0.75 ],
+          ["Daily or near-daily",               1    ]
+        ],
+        note: "Horses evolved in a changing home range. The exploratory system — curiosity, investigation, novelty-seeking — is an active neurological function with identifiable neural substrates, not simply a preference. An environment that never changes provides no information for this system to process."
+      }
+    ]
+  },
+
+  /* ─────────────────────────────────────────────────────────────
+     DOMAIN 5 — REST & AUTONOMY
+     Score: Q17 × Q19 × avg(Q18,Q20) × 100
+     ───────────────────────────────────────────────────────────── */
+  {
+    key:   "Rest & Autonomy",
+    short: "Rest",
+    blurb: "REM sleep in horses requires space, an appropriate surface, perceived safety, and sentinel companions. Separately, the capacity to regulate one's own exposure to human-initiated contact is an evolved social function in all prey species.",
+    questions: [
+      {
+        id: "rest_1", num: 17, pillar: "opportunity",
+        text: "Does your horse have enough space and a suitable surface to lie fully flat — stretched out on its side — to sleep?",
+        options: [
+          ["Never (no space or unsuitable surface)", 0    ],
+          ["Rarely",                                 0.25 ],
+          ["Sometimes",                              0.5  ],
+          ["Most days",                              0.75 ],
+          ["Any time it wants",                      1    ]
+        ],
+        note: "Horses can achieve slow-wave sleep standing, but REM sleep — required for full neurological recovery — only occurs in lateral recumbency, fully stretched out. A horse that cannot lie flat does not complete REM sleep cycles. Chronic REM deprivation in horses produces progressive fatigue, impaired learning, increased cortisol, and in advanced cases, hypnagogic collapse while standing."
+      },
+      {
+        id: "rest_2", num: 18, pillar: "agency",
+        text: "Can your horse choose when to rest, and is it likely to be left undisturbed during rest periods?",
+        options: [
+          ["Never (routine interrupts rest regularly)", 0    ],
+          ["Rarely",                                    0.25 ],
+          ["Sometimes",                                 0.5  ],
+          ["Usually",                                   0.75 ],
+          ["Almost always undisturbed when resting",   1    ]
+        ]
+      },
+      {
+        id: "rest_3", num: 19, pillar: "information",
+        text: "Does your horse have companions nearby who might keep watch — enabling it to enter deeper sleep?",
+        options: [
+          ["Always alone",                         0    ],
+          ["Rarely has companions nearby",         0.25 ],
+          ["Sometimes",                            0.5  ],
+          ["Usually",                              0.75 ],
+          ["Always has companions nearby",         1    ]
+        ],
+        note: "In natural conditions, horses sleep in shifts. At least one group member remains alert while others rest, providing the sentinel function that makes deep sleep physiologically safe. A horse that is alone, or that cannot perceive its companions' proximity, is less likely to enter lateral recumbency because the conditions that make deep sleep adaptive are absent."
+      },
+      {
+        id: "rest_4", num: 20, pillar: "agency",
+        text: "Outside essential care — feeding, health checks, and hoof care — how much of your horse's contact with people is genuinely optional from the horse's perspective?",
+        options: [
+          ["Everything is compulsory",                    0    ],
+          ["Mostly compulsory",                           0.25 ],
+          ["About half optional",                         0.5  ],
+          ["Mostly optional",                             0.75 ],
+          ["Almost all non-care contact is the horse's choice", 1 ]
+        ],
+        note: "This question does not ask whether your horse is handled. Essential care is not optional, and the score does not penalise it. It asks whether non-essential contact — ridden work, grooming sessions, social visits, training — occurs on a schedule that allows the horse any agency in whether it participates."
+      }
+    ]
+  }
+
+]; /* end TFI_DATA */
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   FLAT INDEX
+   ═══════════════════════════════════════════════════════════════════ */
+const ALL_QUESTIONS = TFI_DATA.flatMap(d => d.questions);
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════════════════════════ */
+let answers = {};
+let step    = "intro";   /* "intro" | 0 | 1 | 2 | 3 | 4 | "results" */
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   HELPERS
+   ═══════════════════════════════════════════════════════════════════ */
+function $$(id) { return document.getElementById(id); }
+function esc(s) {
+  return String(s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function avg(arr) {
+  const defined = arr.filter(v => v !== undefined && !isNaN(v));
+  return defined.length ? defined.reduce((a,b) => a+b, 0) / defined.length : 0;
+}
+function ans(id) { return answers[id] !== undefined ? answers[id] : 0; }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCORING
+   EDIT FORMULAS HERE if domain structure changes
+   ═══════════════════════════════════════════════════════════════════ */
+function computeResults() {
+  const domains = TFI_DATA.map((d, i) => {
+    let op, inf, ag, score, pillarsUsed;
+
+    if (i === 0) {
+      /* Domain 1: Movement — O×A only (Q3 reclassified as Opportunity) */
+      op  = avg([ans("mov_1"), ans("mov_2"), ans("mov_3")]);
+      inf = null;  /* no Information pillar in this domain */
+      ag  = ans("mov_4");
+      score = Math.round(op * ag * 100);
+      pillarsUsed = [["Opportunity", op], ["Agency", ag]];
+
+    } else if (i === 1) {
+      /* Domain 2: Foraging — avg(Q5,Q6) × Q8 × Q7 */
+      op  = avg([ans("for_1"), ans("for_2")]);
+      inf = ans("for_4");
+      ag  = ans("for_3");
+      score = Math.round(op * inf * ag * 100);
+      pillarsUsed = [["Opportunity", op], ["Information", inf], ["Agency", ag]];
+
+    } else if (i === 2) {
+      /* Domain 3: Social Life — avg(Q9,Q10) × Q11 × Q12 */
+      op  = avg([ans("soc_1"), ans("soc_2")]);
+      inf = ans("soc_3");
+      ag  = ans("soc_4");
+      score = Math.round(op * inf * ag * 100);
+      pillarsUsed = [["Opportunity", op], ["Information", inf], ["Agency", ag]];
+
+    } else if (i === 3) {
+      /* Domain 4: World Access — Q13 × avg(Q14,Q16) × Q15 */
+      op  = ans("env_1");
+      inf = avg([ans("env_2"), ans("env_4")]);
+      ag  = ans("env_3");
+      score = Math.round(op * inf * ag * 100);
+      pillarsUsed = [["Opportunity", op], ["Information", inf], ["Agency", ag]];
+
+    } else {
+      /* Domain 5: Rest & Autonomy — Q17 × Q19 × avg(Q18,Q20) */
+      op  = ans("rest_1");
+      inf = ans("rest_3");
+      ag  = avg([ans("rest_2"), ans("rest_4")]);
+      score = Math.round(op * inf * ag * 100);
+      pillarsUsed = [["Opportunity", op], ["Information", inf], ["Agency", ag]];
+    }
+
+    /* find bottleneck */
+    const weakest = pillarsUsed.reduce((m, p) => p[1] < m[1] ? p : m);
+
+    return {
+      key:    d.key,
+      short:  d.short,
+      score,
+      pillars: pillarsUsed.map(([l, v]) => ({ label: l, pct: Math.round(v * 100) })),
+      weakest: weakest[0]
+    };
+  });
+
+  const overall = Math.round(domains.reduce((a, b) => a + b.score, 0) / domains.length);
+  return { domains, overall };
+}
+
+function getBand(score) {
+  return COPY.bands.find(b => score >= b.min) || COPY.bands[COPY.bands.length - 1];
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   SVG RADAR CHART — no external dependency
+   ═══════════════════════════════════════════════════════════════════ */
+function buildRadarSVG(domains) {
+  const N  = domains.length;
+  const cx = 200, cy = 195, R = 130;
+  const LR = R + 42;
+
+  function polarX(i, r) { return cx + r * Math.cos((i / N) * 2 * Math.PI - Math.PI / 2); }
+  function polarY(i, r) { return cy + r * Math.sin((i / N) * 2 * Math.PI - Math.PI / 2); }
+
+  /* grid polygons */
+  const gridLevels = [0.25, 0.5, 0.75, 1];
+  const grid = gridLevels.map(r => {
+    const pts = domains.map((_, i) => `${polarX(i,r*R).toFixed(1)},${polarY(i,r*R).toFixed(1)}`).join(" ");
+    const op = r === 1 ? "0.12" : "0.07";
+    return `<polygon points="${pts}" fill="none" stroke="rgba(200,200,220,${op})" stroke-width="1"/>`;
+  }).join("");
+
+  /* axes */
+  const axes = domains.map((_, i) =>
+    `<line x1="${cx}" y1="${cy}" x2="${polarX(i,R).toFixed(1)}" y2="${polarY(i,R).toFixed(1)}" stroke="rgba(200,200,220,0.08)" stroke-width="1"/>`
+  ).join("");
+
+  /* data polygon */
+  const dataPts = domains.map((d, i) => {
+    const r = d.score / 100;
+    return `${polarX(i,r*R).toFixed(1)},${polarY(i,r*R).toFixed(1)}`;
+  }).join(" ");
+
+  /* data points */
+  const dots = domains.map((d, i) => {
+    const r = d.score / 100;
+    return `<circle cx="${polarX(i,r*R).toFixed(1)}" cy="${polarY(i,r*R).toFixed(1)}" r="3" fill="#3A6FA8"/>`;
+  }).join("");
+
+  /* labels */
+  const labels = domains.map((d, i) => {
+    const lx = polarX(i, LR).toFixed(1);
+    const ly = polarY(i, LR).toFixed(1);
+    const angle = (i / N) * 360 - 90;
+    /* keep text readable */
+    const anchor = Math.abs(polarX(i, 1) - cx) < 5 ? "middle"
+                 : polarX(i, 1) > cx ? "start" : "end";
+    return `<text x="${lx}" y="${ly}" text-anchor="${anchor}" dominant-baseline="middle"
+      font-family="Cinzel, serif" font-size="8.5" letter-spacing="0.12em"
+      fill="rgba(184,176,160,0.7)">${d.short.toUpperCase()}</text>`;
+  }).join("");
+
+  /* score labels at data points */
+  const scoreLabels = domains.map((d, i) => {
+    const r = d.score / 100;
+    const sx = polarX(i, r * R + 14).toFixed(1);
+    const sy = polarY(i, r * R + 14).toFixed(1);
+    if (d.score === 0) return "";
+    return `<text x="${sx}" y="${sy}" text-anchor="middle" dominant-baseline="middle"
+      font-family="EB Garamond, serif" font-size="9" fill="rgba(197,213,232,0.8)">${d.score}%</text>`;
+  }).join("");
+
+  return `<svg viewBox="0 0 400 390" xmlns="http://www.w3.org/2000/svg"
+    role="img" aria-label="Teleonomic profile radar chart">
+    ${grid}${axes}
+    <polygon points="${dataPts}"
+      fill="rgba(58,111,168,0.12)"
+      stroke="#3A6FA8"
+      stroke-width="1.5"
+      stroke-linejoin="round"/>
+    ${dots}
+    ${scoreLabels}
+    ${labels}
+  </svg>`;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   RENDER — INTRO
+   ═══════════════════════════════════════════════════════════════════ */
+function renderIntro() {
+  const app = $$("app");
+  app.className = "fade-in";
+
+  const pillarRows = [
+    ["Opportunity", "Can the horse physically perform the evolved behaviour? Does the space, time, and system permit it?"],
+    ["Information",  "Can the horse perceive the sensory cues that normally initiate and guide that behaviour?"],
+    ["Agency",       "Can the horse choose when, where, how, and whether to perform the behaviour?"]
+  ].map(([term, def]) =>
+    `<div class="pillar-row">
+      <span class="pillar-term">${term}</span>
+      <span class="pillar-def">${def}</span>
+    </div>`
+  ).join("");
+
+  app.innerHTML = `
+    <div class="shell">
+      <div class="intro-body">
+
+        <p class="intro-lead">${COPY.introLead}</p>
+
+        <span class="t-label" style="margin-bottom:0.2rem;">The three pillars</span>
+        <div class="pillar-table">${pillarRows}</div>
+
+        <p class="t-body" style="margin:1.5rem 0 0;">${COPY.scoringNote}</p>
+
+        <hr class="rule" style="margin:2rem 0;">
+
+        <div class="disclaimer-block">
+          <span class="t-label">A note on what this is not</span>
+          <p>${COPY.disclaimer}</p>
+        </div>
+
+        <p class="t-body" style="color:var(--text-muted);margin-bottom:1.5rem;">
+          The instrument contains 20 questions across 5 domains.
+          It takes approximately 4–6 minutes to complete.
+        </p>
+
+        <button class="btn-begin" id="btn-begin">Begin the assessment</button>
+
+      </div>
+    </div>`;
+
+  $$("btn-begin").addEventListener("click", () => { step = 0; render(); });
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   RENDER — DOMAIN
+   ═══════════════════════════════════════════════════════════════════ */
+function renderDomain() {
+  const app = $$("app");
+  app.className = "fade-in";
+  const d = TFI_DATA[step];
+
+  /* progress segments */
+  const segs = TFI_DATA.map((_, i) => {
+    const cls = i < step ? "done" : i === step ? "current" : "";
+    return `<div class="progress-seg ${cls}"></div>`;
+  }).join("");
+
+  /* answered tracking */
+  const totalDone = ALL_QUESTIONS.filter(q => answers[q.id] !== undefined).length;
+  const domainDone = d.questions.every(q => answers[q.id] !== undefined);
+  const isLast = step === TFI_DATA.length - 1;
+
+  /* build question blocks */
+  const qBlocks = d.questions.map(q => {
+    const opts = q.options.map(([label, val]) => {
+      const active = answers[q.id] === val ? " active" : "";
+      return `<button class="opt${active}" data-q="${q.id}" data-v="${val}">${esc(label)}</button>`;
+    }).join("");
+
+    const noteHtml = q.note
+      ? `<p class="q-note">${q.note}</p>`
+      : "";
+
+    const pillarLabel = q.pillar.charAt(0).toUpperCase() + q.pillar.slice(1);
+
+    return `
+      <div class="q-block">
+        <div class="q-meta">
+          <span class="q-num">${String(q.num).padStart(2,"0")}</span>
+          <span class="q-pillar">${pillarLabel}</span>
+        </div>
+        <p class="q-text">${esc(q.text)}</p>
+        <div class="opts">${opts}</div>
+        ${noteHtml}
+      </div>`;
+  }).join("");
+
+  const backBtn = step > 0
+    ? `<button class="btn-back" id="btn-back">← Previous domain</button>`
+    : "";
+
+  const continueLabel = isLast ? "View profile →" : "Next domain →";
+
+  app.innerHTML = `
+    <div class="shell">
+      <div class="progress-wrap" aria-hidden="true">${segs}</div>
+
+      <span class="t-label">Domain ${step + 1} of ${TFI_DATA.length}</span>
+      <h2 class="t-domain" style="margin:0.4rem 0 1rem;">${esc(d.key)}</h2>
+      <p class="t-subheading" style="margin-bottom:1.5rem;">${d.blurb}</p>
+
+      <hr class="rule-edge">
+
+      ${qBlocks}
+
+      <div class="btn-row">
+        ${backBtn}
+        <button class="btn-continue" id="btn-next" ${domainDone ? "" : "disabled"}>
+          ${continueLabel}
+        </button>
+        <span class="answered-count">${totalDone} / ${ALL_QUESTIONS.length} answered</span>
+      </div>
+    </div>`;
+
+  /* option click handlers */
+  app.querySelectorAll(".opt").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const qid = e.currentTarget.dataset.q;
+      const val = parseFloat(e.currentTarget.dataset.v);
+      answers[qid] = val;
+      /* update active state */
+      app.querySelectorAll(`[data-q="${qid}"]`).forEach(b => {
+        b.classList.toggle("active", parseFloat(b.dataset.v) === val);
+      });
+      /* re-evaluate continue button */
+      const allAnswered = TFI_DATA[step].questions.every(q => answers[q.id] !== undefined);
+      $$("btn-next").disabled = !allAnswered;
+    });
+  });
+
+  const backEl = $$("btn-back");
+  if (backEl) backEl.addEventListener("click", () => { step--; render(); });
+
+  $$("btn-next").addEventListener("click", () => {
+    step = isLast ? "results" : step + 1;
+    render();
+  });
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   RENDER — RESULTS
+   ═══════════════════════════════════════════════════════════════════ */
+function renderResults() {
+  const app = $$("app");
+  app.className = "fade-in";
+  const { domains, overall } = computeResults();
+
+  /* domain rows */
+  const domainRows = domains.map(d => {
+    const band = getBand(d.score);
+    const pillarsHtml = d.pillars.map(p =>
+      `<div class="pillar-item">
+        <span class="pillar-label">${p.label}</span>
+        <span class="pillar-value">${p.pct}%</span>
+      </div>`
+    ).join("");
+
+    return `
+      <div class="domain-row">
+        <div class="domain-title-row">
+          <span class="domain-name">${esc(d.key)}</span>
+          <span class="domain-score">${d.score}%</span>
+        </div>
+        <div class="track">
+          <div class="track-fill" style="width:${d.score}%"></div>
+        </div>
+        <div class="pillars-row">${pillarsHtml}</div>
+        <p class="constraint-note">
+          ${band.text}${d.pillars.length > 1
+            ? ` Primary constraint: ${d.weakest}.`
+            : ` Limiting factor: ${d.weakest}.`}
+        </p>
+      </div>`;
+  }).join("");
+
+  /* reading-the-profile paragraphs */
+  const readingParas = COPY.readingBody.map(p => `<p>${p}</p>`).join("");
+
+  app.innerHTML = `
+    <div class="shell">
+      <div class="results-header">
+        <span class="t-label">Teleonomic Profile</span>
+        <div class="score-line">
+          <span class="score-number">${overall}</span>
+          <span class="score-pct">%</span>
+        </div>
+        <p class="score-caption">${COPY.overallCaption}</p>
+      </div>
+
+      <hr class="rule">
+
+      <!-- Radar chart -->
+      <div class="radar-wrap">
+        ${buildRadarSVG(domains)}
+      </div>
+
+      <p class="t-body" style="max-width:580px;margin-bottom:1rem;">
+        ${COPY.conservativeNote}
+      </p>
+
+      <hr class="rule">
+
+      <span class="t-label" style="margin-bottom:1.5rem;">Domain Breakdown</span>
+      <div style="margin-top:1rem;">${domainRows}</div>
+
+      <div class="reading-section">
+        <span class="t-label" style="margin-bottom:1rem;">${esc(COPY.readingTitle)}</span>
+        <div style="margin-top:1.2rem;">${readingParas}</div>
+      </div>
+
+      <div class="result-actions no-print">
+        <button class="btn-restart" id="btn-restart">Begin again</button>
+        <button class="btn-print"   id="btn-print">Print / save as PDF</button>
+      </div>
+    </div>`;
+
+  $$("btn-restart").addEventListener("click", () => { answers = {}; step = "intro"; render(); });
+  $$("btn-print").addEventListener("click",   () => window.print());
+
+  window.scrollTo(0, 0);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   ROUTER
+   ═══════════════════════════════════════════════════════════════════ */
+function render() {
+  window.scrollTo(0, 0);
+  if (step === "intro")   return renderIntro();
+  if (step === "results") return renderResults();
+  return renderDomain();
+}
+
+render();
+</script>
+</body>
+</html>

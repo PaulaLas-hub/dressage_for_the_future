@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equine Teleonomic Fulfilment Index (TFI) | Dressage for the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F6F3EE;--cream-dark:#EAE5DC;--forest:#1C1C28;--forest-mid:#2A2A3A;--forest-light:#484858;--gold:#3A6FA8;--gold-light:#5A8FCA;--gold-pale:#C5D5E8;--blue:#6B8CAE;--blue-light:#8EC5FF;--bronze:#8B6350;--ink:#1A1A22;--ink-soft:#3C3C4E;--mist:#9A9AAA;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:62px;border-bottom:2px solid var(--gold);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;letter-spacing:.06em;color:var(--cream);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;margin-left:2rem;}
+.nav-links a{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;white-space:nowrap;transition:color .3s;}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-contact{color:var(--gold)!important;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+
+/* HERO */
+.gold-rule{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.article-hero{padding:9rem 8% 4.5rem;background:var(--forest);position:relative;}
+.article-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.section-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block;}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--cream);max-width:800px;margin-bottom:1rem;}
+.article-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--gold-pale);opacity:.9;max-width:720px;margin-top:.5rem;}
+
+/* INTRO */
+.intro-section{max-width:740px;margin:0 auto;padding:4rem 8% 2rem;}
+.intro-section p{margin-bottom:1.6rem;color:var(--ink-soft);}
+.intro-section h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--forest);margin:3rem 0 1rem;line-height:1.2;border-left:2px solid var(--gold);padding-left:1.2rem;}
+.back-link{display:inline-flex;align-items:center;gap:.6rem;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:2.5rem;border-bottom:1px solid transparent;transition:border-color .3s;}
+.back-link:hover{border-bottom-color:var(--gold);}
+
+/* FRAMEWORK CALLOUT */
+.framework-box{background:var(--forest);color:var(--cream);padding:2.5rem 3rem;margin:2.5rem 0;}
+.framework-box h3{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;}
+.framework-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
+.domain-pill{text-align:center;padding:.9rem .5rem;border:1px solid rgba(90,143,202,.25);background:rgba(90,143,202,.06);}
+.domain-pill .num{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.2em;color:var(--gold);display:block;margin-bottom:.4rem;}
+.domain-pill .label{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--gold-pale);line-height:1.3;}
+
+/* QUESTIONNAIRE */
+.questionnaire{max-width:760px;margin:0 auto;padding:1rem 8% 4rem;}
+.domain-section{margin-bottom:3.5rem;border-top:1px solid var(--cream-dark);padding-top:2.5rem;}
+.domain-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:.5rem;}
+.domain-num{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);}
+.domain-name{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--forest);}
+.domain-desc{font-size:.95rem;color:var(--mist);font-style:italic;margin-bottom:2rem;line-height:1.65;max-width:660px;}
+
+.question-block{margin-bottom:2.2rem;}
+.question-text{font-family:'EB Garamond',Georgia,serif;font-size:1rem;color:var(--ink);margin-bottom:.85rem;line-height:1.65;}
+.question-num{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;display:inline-block;margin-right:.5rem;}
+.options-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.options-list li{display:flex;align-items:flex-start;gap:.75rem;}
+.options-list input[type="radio"]{margin-top:.38rem;flex-shrink:0;accent-color:var(--gold);width:15px;height:15px;cursor:pointer;}
+.options-list label{font-size:.95rem;color:var(--ink-soft);cursor:pointer;line-height:1.55;}
+.options-list input[type="radio"]:checked + label{color:var(--ink);}
+
+/* SUBMIT */
+.submit-wrap{text-align:center;padding:2rem 0 1rem;border-top:1px solid var(--cream-dark);margin-top:2rem;}
+.btn-calculate{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;padding:1.1rem 3rem;background:var(--forest);color:var(--gold-pale);border:1px solid var(--forest);cursor:pointer;transition:all .3s;}
+.btn-calculate:hover{background:var(--forest-mid);border-color:var(--gold);color:var(--gold-light);}
+.error-msg{color:var(--bronze);font-size:.9rem;margin-top:.9rem;display:none;font-style:italic;}
+.submit-note{font-size:.8rem;color:var(--mist);margin-top:.8rem;font-family:'Cinzel',serif;letter-spacing:.08em;}
+
+/* RESULTS */
+.results-section{display:none;background:var(--forest);padding:5rem 8% 4rem;}
+.results-inner{max-width:720px;margin:0 auto;}
+.results-eyebrow{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+.results-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:var(--cream);margin-bottom:2.5rem;}
+
+.composite-display{display:flex;align-items:center;gap:3rem;margin-bottom:3.5rem;padding:2rem 2.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(90,143,202,.2);}
+.composite-left{flex-shrink:0;}
+.composite-label{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:.3rem;}
+.composite-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:var(--gold-light);line-height:1;}
+.composite-denom{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.15em;color:var(--mist);margin-top:.2rem;}
+.composite-interp{font-family:'EB Garamond',Georgia,serif;font-size:1rem;color:var(--gold-pale);line-height:1.7;font-style:italic;}
+
+.domain-results-heading{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem;}
+.domain-result-row{margin-bottom:1.6rem;}
+.dr-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.5rem;}
+.dr-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--cream);}
+.dr-score{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.15em;color:var(--gold);}
+.dr-bar-track{height:5px;background:rgba(255,255,255,.1);}
+.dr-bar-fill{height:100%;background:var(--gold);transition:width 1.1s cubic-bezier(.4,0,.2,1);width:0%;}
+
+.results-note{font-size:.9rem;color:var(--mist);font-style:italic;border-top:1px solid rgba(58,111,168,.18);padding-top:1.6rem;margin-top:2rem;line-height:1.75;}
+.btn-retake{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 2.2rem;background:transparent;color:var(--gold-pale);border:1px solid rgba(197,213,232,.3);cursor:pointer;transition:all .3s;margin-top:1.8rem;display:inline-block;}
+.btn-retake:hover{background:rgba(255,255,255,.06);border-color:var(--gold-pale);}
+
+/* FOOTER */
+footer{background:var(--ink);padding:3.5rem 8% 2.5rem;}
+.footer-inner{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(58,111,168,.15);margin-bottom:1.5rem;}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:.5rem;}
+.footer-brand p{font-size:.9rem;color:var(--mist);max-width:360px;line-height:1.6;}
+.footer-social{margin-top:1rem;}
+.footer-social a{font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+.footer-social a:hover{color:var(--gold-light);}
+.footer-nav h4{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.footer-nav ul{list-style:none;}
+.footer-nav li{margin-bottom:.5rem;}
+.footer-nav a{font-size:.9rem;color:var(--mist);text-decoration:none;transition:color .3s;}
+.footer-nav a:hover{color:var(--gold-pale);}
+.footer-bottom{display:flex;justify-content:space-between;font-size:.7rem;color:var(--mist);font-family:'Cinzel',serif;letter-spacing:.1em;opacity:.4;flex-wrap:wrap;gap:.5rem;}
+
+@media(max-width:800px){
+  nav{padding:0 1.5rem;}.nav-links{display:none;}
+  .article-hero{padding:7rem 6% 3rem;}
+  .intro-section,.questionnaire{padding-left:6%;padding-right:6%;}
+  .framework-grid{grid-template-columns:repeat(2,1fr);}
+  .composite-display{flex-direction:column;gap:1.5rem;}
+  .footer-inner{flex-direction:column;}.footer-bottom{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dressage for the Future</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+    <li><a href="research.html">Research</a></li>
+        
+    <li><a href="correspondence.html">Correspondence</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <span class="section-label">Interactive Tool</span>
+  <h1 class="article-title">Equine Teleonomic Fulfilment Index</h1>
+  <p class="article-subtitle">Estimating the proportion of a horse's evolved opportunities — in movement, foraging, social contact, environmental access, and agency — that remain available under its current management system.</p>
+</div>
+<div class="gold-rule"></div>
+
+<!-- INTRODUCTION -->
+<div class="intro-section">
+  <a href="teleonimic-index.html" class="back-link">← Teleonomic Index</a>
+
+  <p>The horse's biological programme — the evolved system of drives, capacities, and information-processing mechanisms that regulates its behaviour — was shaped across 55 million years as a cursorial, social, grazing prey animal on open terrain. Under domestication, many of the environmental inputs and behavioural outputs that programme expects are no longer available.</p>
+
+  <p>The TFI is not a welfare instrument. It does not ask whether the horse is happy, stressed, or suffering. It asks a more precise question: <em>of the evolved opportunities this animal's biology is structured to access — movement across space, continuous foraging, social bonds, environmental information, and self-directed behaviour — what proportion is currently available?</em></p>
+
+  <p>A score of 100 indicates full access to evolved opportunity across all domains. A score of 0 indicates complete restriction. The instrument is educational: it maps the gap between what the horse's biology expects and what its management currently provides.</p>
+
+  <h2>Five Domains of Evolved Opportunity</h2>
+  <p>The TFI is structured around five domains, each derived from the horse's evolutionary history and each separately restrictable under management. A horse can have movement without foraging freedom, social access without environmental openness, or opportunity in all four domains without meaningful agency.</p>
+
+  <div class="framework-box">
+    <h3>TFI Domain Structure</h3>
+    <div class="framework-grid">
+      <div class="domain-pill"><span class="num">I</span><span class="label">Locomotion</span></div>
+      <div class="domain-pill"><span class="num">II</span><span class="label">Foraging</span></div>
+      <div class="domain-pill"><span class="num">III</span><span class="label">Social Contact</span></div>
+      <div class="domain-pill"><span class="num">IV</span><span class="label">Sensory Access</span></div>
+      <div class="domain-pill"><span class="num">V</span><span class="label">Agency</span></div>
+    </div>
+  </div>
+
+  <p>Each domain contains four questions. All questions are factual — they ask what is available, not whether it is provided adequately. Responses are scored 0–3 per question. Domain scores are expressed as percentages of maximum opportunity, and the five domain scores are averaged to produce the composite TFI. Completion takes approximately 3–5 minutes.</p>
+</div>
+
+<!-- QUESTIONNAIRE -->
+<div class="questionnaire">
+
+  <!-- DOMAIN I: LOCOMOTION -->
+  <div class="domain-section">
+    <div class="domain-header">
+      <span class="domain-num">Domain I</span>
+      <span class="domain-name">Locomotion</span>
+    </div>
+    <p class="domain-desc">Feral horses cover 10–80 km per day across varied terrain, with full control over the timing, direction, and pace of movement. Movement is not supplementary to the horse's life — it is the primary medium through which foraging, social contact, environmental monitoring, and predator avoidance occur.</p>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">1.</span>On a typical day, how many hours can your horse move freely without a person directing its movement?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d1q1" id="d1q1_0" value="0"><label for="d1q1_0">Under 2 hours</label></li>
+        <li><input type="radio" name="d1q1" id="d1q1_1" value="1"><label for="d1q1_1">2–6 hours</label></li>
+        <li><input type="radio" name="d1q1" id="d1q1_2" value="2"><label for="d1q1_2">6–12 hours</label></li>
+        <li><input type="radio" name="d1q1" id="d1q1_3" value="3"><label for="d1q1_3">12 hours or more</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">2.</span>Approximately how large is the area your horse can access and move in freely on a typical day?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d1q2" id="d1q2_0" value="0"><label for="d1q2_0">Stable or small yard (under 100 m²)</label></li>
+        <li><input type="radio" name="d1q2" id="d1q2_1" value="1"><label for="d1q2_1">Small paddock (100 m² – 0.5 acre)</label></li>
+        <li><input type="radio" name="d1q2" id="d1q2_2" value="2"><label for="d1q2_2">Medium paddock (0.5–5 acres)</label></li>
+        <li><input type="radio" name="d1q2" id="d1q2_3" value="3"><label for="d1q2_3">Large pasture (5 acres or more)</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">3.</span>Does the area your horse moves in include varied ground types or terrain?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d1q3" id="d1q3_0" value="0"><label for="d1q3_0">No — uniform surface only</label></li>
+        <li><input type="radio" name="d1q3" id="d1q3_1" value="1"><label for="d1q3_1">Minimal variation</label></li>
+        <li><input type="radio" name="d1q3" id="d1q3_2" value="2"><label for="d1q3_2">Some variation in substrates or gradients</label></li>
+        <li><input type="radio" name="d1q3" id="d1q3_3" value="3"><label for="d1q3_3">Yes — varied terrain, substrates, and/or changes in elevation</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">4.</span>Can your horse move at any pace it chooses — including canter and gallop — in its available space?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d1q4" id="d1q4_0" value="0"><label for="d1q4_0">No</label></li>
+        <li><input type="radio" name="d1q4" id="d1q4_1" value="1"><label for="d1q4_1">Only in limited conditions</label></li>
+        <li><input type="radio" name="d1q4" id="d1q4_2" value="2"><label for="d1q4_2">Mostly yes</label></li>
+        <li><input type="radio" name="d1q4" id="d1q4_3" value="3"><label for="d1q4_3">Yes, freely</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DOMAIN II: FORAGING -->
+  <div class="domain-section">
+    <div class="domain-header">
+      <span class="domain-num">Domain II</span>
+      <span class="domain-name">Foraging</span>
+    </div>
+    <p class="domain-desc">Wild horses spend 16–20 hours per day grazing, covering ground while eating, and selecting from diverse plant species. The equine digestive system is built for near-continuous fibre intake — not meals. The foraging programme and the locomotion programme are intertwined: the horse moves in order to graze, and grazes in order to move.</p>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">5.</span>How many hours per day does your horse have access to forage — grass, hay, or haylage?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d2q1" id="d2q1_0" value="0"><label for="d2q1_0">Under 8 hours</label></li>
+        <li><input type="radio" name="d2q1" id="d2q1_1" value="1"><label for="d2q1_1">8–12 hours</label></li>
+        <li><input type="radio" name="d2q1" id="d2q1_2" value="2"><label for="d2q1_2">12–18 hours</label></li>
+        <li><input type="radio" name="d2q1" id="d2q1_3" value="3"><label for="d2q1_3">18–24 hours (near-continuous)</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">6.</span>How is forage typically provided?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d2q2" id="d2q2_0" value="0"><label for="d2q2_0">Fixed meals only — 2 or fewer per day</label></li>
+        <li><input type="radio" name="d2q2" id="d2q2_1" value="1"><label for="d2q2_1">Multiple meals — 3 or 4 per day</label></li>
+        <li><input type="radio" name="d2q2" id="d2q2_2" value="2"><label for="d2q2_2">Restricted but available for much of the day (slow feeder or equivalent)</label></li>
+        <li><input type="radio" name="d2q2" id="d2q2_3" value="3"><label for="d2q2_3">Continuous or near-continuous access</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">7.</span>Does your horse have regular access to living grass — pasture grazing or strip-grazing?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d2q3" id="d2q3_0" value="0"><label for="d2q3_0">Never</label></li>
+        <li><input type="radio" name="d2q3" id="d2q3_1" value="1"><label for="d2q3_1">Occasionally (fewer than twice a week)</label></li>
+        <li><input type="radio" name="d2q3" id="d2q3_2" value="2"><label for="d2q3_2">Several days a week</label></li>
+        <li><input type="radio" name="d2q3" id="d2q3_3" value="3"><label for="d2q3_3">Daily</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">8.</span>How many different types of forage does your horse have access to?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d2q4" id="d2q4_0" value="0"><label for="d2q4_0">One type only</label></li>
+        <li><input type="radio" name="d2q4" id="d2q4_1" value="1"><label for="d2q4_1">Two types</label></li>
+        <li><input type="radio" name="d2q4" id="d2q4_2" value="2"><label for="d2q4_2">Three types</label></li>
+        <li><input type="radio" name="d2q4" id="d2q4_3" value="3"><label for="d2q4_3">Four or more (e.g. grass, hay, herbs, browse)</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DOMAIN III: SOCIAL CONTACT -->
+  <div class="domain-section">
+    <div class="domain-header">
+      <span class="domain-num">Domain III</span>
+      <span class="domain-name">Social Contact</span>
+    </div>
+    <p class="domain-desc">Horses evolved as obligate social animals in stable, mixed-sex bands of 3–20 or more individuals, with continuous proximity, direct physical contact, mutual grooming, collective movement, and long-term bonds. Social isolation in the wild represents acute danger. The social programme is not optional — it is structural.</p>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">9.</span>Can your horse make direct physical contact with another horse — touching, mutual grooming, or play?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d3q1" id="d3q1_0" value="0"><label for="d3q1_0">Never</label></li>
+        <li><input type="radio" name="d3q1" id="d3q1_1" value="1"><label for="d3q1_1">Occasionally (limited fence contact)</label></li>
+        <li><input type="radio" name="d3q1" id="d3q1_2" value="2"><label for="d3q1_2">Regularly over a fence or barrier</label></li>
+        <li><input type="radio" name="d3q1" id="d3q1_3" value="3"><label for="d3q1_3">Yes — free physical contact in shared space</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">10.</span>Does your horse have at least one consistent companion it can always access?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d3q2" id="d3q2_0" value="0"><label for="d3q2_0">No</label></li>
+        <li><input type="radio" name="d3q2" id="d3q2_1" value="1"><label for="d3q2_1">Companion is sometimes separated</label></li>
+        <li><input type="radio" name="d3q2" id="d3q2_2" value="2"><label for="d3q2_2">Usually available</label></li>
+        <li><input type="radio" name="d3q2" id="d3q2_3" value="3"><label for="d3q2_3">Yes, always</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">11.</span>How many hours per day is your horse within sight and sound of another horse?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d3q3" id="d3q3_0" value="0"><label for="d3q3_0">Under 4 hours</label></li>
+        <li><input type="radio" name="d3q3" id="d3q3_1" value="1"><label for="d3q3_1">4–12 hours</label></li>
+        <li><input type="radio" name="d3q3" id="d3q3_2" value="2"><label for="d3q3_2">12–20 hours</label></li>
+        <li><input type="radio" name="d3q3" id="d3q3_3" value="3"><label for="d3q3_3">20–24 hours</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">12.</span>Can your horse choose which horses to spend time near, within its available companions?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d3q4" id="d3q4_0" value="0"><label for="d3q4_0">No — social contact is fixed or assigned</label></li>
+        <li><input type="radio" name="d3q4" id="d3q4_1" value="1"><label for="d3q4_1">Limited choice</label></li>
+        <li><input type="radio" name="d3q4" id="d3q4_2" value="2"><label for="d3q4_2">Some choice</label></li>
+        <li><input type="radio" name="d3q4" id="d3q4_3" value="3"><label for="d3q4_3">Yes — free choice among available companions</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DOMAIN IV: SENSORY ACCESS -->
+  <div class="domain-section">
+    <div class="domain-header">
+      <span class="domain-num">Domain IV</span>
+      <span class="domain-name">Sensory Access</span>
+    </div>
+    <p class="domain-desc">As a prey animal on open terrain, the horse evolved to continuously read its environment through panoramic vision, independently rotating ears, olfaction, and hoof-ground proprioception. Environmental information is not incidental to its biology — it is the primary data stream the programme is built to process. Architectural confinement removes much of it at once.</p>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">13.</span>How many hours per day is your horse outdoors, exposed to natural conditions — weather, wind, and changing light?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d4q1" id="d4q1_0" value="0"><label for="d4q1_0">Under 4 hours</label></li>
+        <li><input type="radio" name="d4q1" id="d4q1_1" value="1"><label for="d4q1_1">4–12 hours</label></li>
+        <li><input type="radio" name="d4q1" id="d4q1_2" value="2"><label for="d4q1_2">12–20 hours</label></li>
+        <li><input type="radio" name="d4q1" id="d4q1_3" value="3"><label for="d4q1_3">20–24 hours</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">14.</span>What best describes the ground surface your horse stands on for most of the day?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d4q2" id="d4q2_0" value="0"><label for="d4q2_0">Rubber mat or concrete only</label></li>
+        <li><input type="radio" name="d4q2" id="d4q2_1" value="1"><label for="d4q2_1">Bedding on a hard floor (straw, shavings)</label></li>
+        <li><input type="radio" name="d4q2" id="d4q2_2" value="2"><label for="d4q2_2">Mixed — some outdoor access on natural ground</label></li>
+        <li><input type="radio" name="d4q2" id="d4q2_3" value="3"><label for="d4q2_3">Primarily natural substrates: soil, grass, or gravel</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">15.</span>How often does your horse encounter something genuinely new — a novel environment, terrain, smell, or object?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d4q3" id="d4q3_0" value="0"><label for="d4q3_0">Rarely or never</label></li>
+        <li><input type="radio" name="d4q3" id="d4q3_1" value="1"><label for="d4q3_1">A few times a month</label></li>
+        <li><input type="radio" name="d4q3" id="d4q3_2" value="2"><label for="d4q3_2">Weekly</label></li>
+        <li><input type="radio" name="d4q3" id="d4q3_3" value="3"><label for="d4q3_3">Multiple times per week</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">16.</span>How open is your horse's visual environment for most of the day?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d4q4" id="d4q4_0" value="0"><label for="d4q4_0">Enclosed — stall with small window or solid walls</label></li>
+        <li><input type="radio" name="d4q4" id="d4q4_1" value="1"><label for="d4q4_1">Limited view — small yard with restricted sightlines</label></li>
+        <li><input type="radio" name="d4q4" id="d4q4_2" value="2"><label for="d4q4_2">Partial view of landscape or open space</label></li>
+        <li><input type="radio" name="d4q4" id="d4q4_3" value="3"><label for="d4q4_3">Open — can see a natural horizon or wide landscape</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DOMAIN V: AGENCY -->
+  <div class="domain-section">
+    <div class="domain-header">
+      <span class="domain-num">Domain V</span>
+      <span class="domain-name">Agency</span>
+    </div>
+    <p class="domain-desc">Feral horses make thousands of self-directed decisions each day: where to move, when to rest, who to approach, what to eat, how to respond. Agency — the capacity to initiate and regulate one's own behaviour — is not a luxury of wild life. It is a core feature of the equine biological programme, present in individual horses and distributed across the herd as collective decision-making.</p>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">17.</span>When you approach your horse in its own space, can it move away from you?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d5q1" id="d5q1_0" value="0"><label for="d5q1_0">No — confined, cannot move away</label></li>
+        <li><input type="radio" name="d5q1" id="d5q1_1" value="1"><label for="d5q1_1">Rarely — very restricted space</label></li>
+        <li><input type="radio" name="d5q1" id="d5q1_2" value="2"><label for="d5q1_2">Sometimes</label></li>
+        <li><input type="radio" name="d5q1" id="d5q1_3" value="3"><label for="d5q1_3">Yes — consistently has room and the ability to move away</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">18.</span>Can your horse choose when to rest — to lie down or stand quietly — without being disturbed?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d5q2" id="d5q2_0" value="0"><label for="d5q2_0">Rarely — frequent disturbances or too little space</label></li>
+        <li><input type="radio" name="d5q2" id="d5q2_1" value="1"><label for="d5q2_1">Sometimes</label></li>
+        <li><input type="radio" name="d5q2" id="d5q2_2" value="2"><label for="d5q2_2">Mostly</label></li>
+        <li><input type="radio" name="d5q2" id="d5q2_3" value="3"><label for="d5q2_3">Yes — can rest undisturbed whenever it chooses</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">19.</span>On a typical day, who initiates most of your horse's significant activities — eating, moving, social interaction?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d5q3" id="d5q3_0" value="0"><label for="d5q3_0">Almost entirely human-directed</label></li>
+        <li><input type="radio" name="d5q3" id="d5q3_1" value="1"><label for="d5q3_1">Mostly human-directed</label></li>
+        <li><input type="radio" name="d5q3" id="d5q3_2" value="2"><label for="d5q3_2">Roughly equal</label></li>
+        <li><input type="radio" name="d5q3" id="d5q3_3" value="3"><label for="d5q3_3">Mostly or entirely horse-initiated</label></li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <p class="question-text"><span class="question-num">20.</span>Can your horse move away from physical discomfort — for example, to seek shelter from sun or rain, shade, or distance from flies?</p>
+      <ul class="options-list">
+        <li><input type="radio" name="d5q4" id="d5q4_0" value="0"><label for="d5q4_0">No — no refuge options available</label></li>
+        <li><input type="radio" name="d5q4" id="d5q4_1" value="1"><label for="d5q4_1">Limited options, fixed or restricted</label></li>
+        <li><input type="radio" name="d5q4" id="d5q4_2" value="2"><label for="d5q4_2">Some ability to seek refuge</label></li>
+        <li><input type="radio" name="d5q4" id="d5q4_3" value="3"><label for="d5q4_3">Yes — can access multiple refuge options freely</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="submit-wrap">
+    <button class="btn-calculate" onclick="calculateTFI()">Calculate TFI Score</button>
+    <p class="error-msg" id="error-msg">Please answer all 20 questions before calculating.</p>
+    <p class="submit-note">All 20 questions must be answered. No data is stored or transmitted.</p>
+  </div>
+
+</div><!-- end questionnaire -->
+
+<!-- RESULTS -->
+<div class="results-section" id="results-section">
+  <div class="results-inner">
+    <p class="results-eyebrow">TFI Result</p>
+    <h2 class="results-title">Equine Teleonomic Fulfilment Index</h2>
+
+    <div class="composite-display">
+      <div class="composite-left">
+        <span class="composite-label">Composite TFI</span>
+        <div class="composite-num" id="composite-score">—</div>
+        <div class="composite-denom">/ 100</div>
+      </div>
+      <div class="composite-interp" id="composite-interp"></div>
+    </div>
+
+    <p class="domain-results-heading">Domain Scores</p>
+    <div id="domain-results"></div>
+
+    <p class="results-note">These scores estimate the proportion of evolved opportunity available in each domain — not a welfare assessment. A score of 100 means the full range of evolved capacity in that domain is accessible under current management; 0 means complete restriction. Domain scores can be read independently: a high composite with one very low domain score is more informative than the composite alone.</p>
+
+    <button class="btn-retake" onclick="retake()">Retake the Index</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dressage for the Future</h3>
+      <p>Research, ethics and the future of horse sport.</p>
+      <div class="footer-social" style="margin-top:1.2rem;">
+        <p style="font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Follow Dressage for the Future</p>
+        <div style="display:flex;flex-direction:column;gap:.4rem;">
+          <a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128248; Facebook</a>
+          <a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128247; Instagram</a>
+          <a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#10006; X</a>
+          <a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#129525; Threads</a>
+          <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#9998; Substack</a>
+        </div>
+        <p style="font-family:'Cinzel',serif;font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);opacity:.45;margin-top:.8rem;">Research &middot; Essays &middot; Daily Updates &middot; Horse Welfare</p>
+      </div>
+      <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;">Subscribe on Substack &rarr;</a>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="correspondence.html">Correspondence</a></li>
+        <li><a href="teleonimic-index.html">Teleonomic Index</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Dressage for the Future</span>
+    <span>Canberra, Australia</span>
+  </div>
+</footer>
+
+<script>
+const domains = [
+  { name: 'Locomotion',     questions: ['d1q1','d1q2','d1q3','d1q4'] },
+  { name: 'Foraging',       questions: ['d2q1','d2q2','d2q3','d2q4'] },
+  { name: 'Social Contact', questions: ['d3q1','d3q2','d3q3','d3q4'] },
+  { name: 'Sensory Access', questions: ['d4q1','d4q2','d4q3','d4q4'] },
+  { name: 'Agency',         questions: ['d5q1','d5q2','d5q3','d5q4'] }
+];
+
+function getVal(name) {
+  const el = document.querySelector('input[name="' + name + '"]:checked');
+  return el ? parseInt(el.value) : null;
+}
+
+function calculateTFI() {
+  const domainScores = [];
+  let allAnswered = true;
+
+  for (const domain of domains) {
+    let sum = 0;
+    for (const q of domain.questions) {
+      const v = getVal(q);
+      if (v === null) { allAnswered = false; break; }
+      sum += v;
+    }
+    if (!allAnswered) break;
+    domainScores.push(Math.round((sum / 12) * 100));
+  }
+
+  const errEl = document.getElementById('error-msg');
+  if (!allAnswered) {
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  const composite = Math.round(domainScores.reduce((a, b) => a + b, 0) / 5);
+
+  document.getElementById('composite-score').textContent = composite;
+  document.getElementById('composite-interp').textContent = interpretComposite(composite);
+
+  const drEl = document.getElementById('domain-results');
+  drEl.innerHTML = '';
+  domains.forEach(function(d, i) {
+    const score = domainScores[i];
+    drEl.innerHTML +=
+      '<div class="domain-result-row">' +
+        '<div class="dr-header">' +
+          '<span class="dr-name">' + d.name + '</span>' +
+          '<span class="dr-score">' + score + ' / 100</span>' +
+        '</div>' +
+        '<div class="dr-bar-track">' +
+          '<div class="dr-bar-fill" data-target="' + score + '"></div>' +
+        '</div>' +
+      '</div>';
+  });
+
+  const resultsEl = document.getElementById('results-section');
+  resultsEl.style.display = 'block';
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  setTimeout(function() {
+    document.querySelectorAll('.dr-bar-fill').forEach(function(bar) {
+      bar.style.width = bar.dataset.target + '%';
+    });
+  }, 200);
+}
+
+function interpretComposite(score) {
+  if (score >= 80) {
+    return 'A high proportion of this horse’s evolved opportunities remain available. The five domains show broad access to the capacities the horse’s biology is structured to use.';
+  }
+  if (score >= 60) {
+    return 'Most evolved opportunities are accessible, with meaningful restrictions in one or more domains. The domain breakdown shows where the largest gaps between biological expectation and current management occur.';
+  }
+  if (score >= 40) {
+    return 'Significant restrictions are present across multiple domains. The horse’s biological programme is operating with substantially reduced access to the inputs and outputs it was shaped to use.';
+  }
+  if (score >= 20) {
+    return 'The majority of evolved opportunities are restricted. Only a limited proportion of the horse’s biological programme has the environmental conditions required to operate.';
+  }
+  return 'Severe restriction across most or all domains. The horse has very limited access to the evolved opportunities its biology is structured around.';
+}
+
+function retake() {
+  document.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+  document.getElementById('results-section').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

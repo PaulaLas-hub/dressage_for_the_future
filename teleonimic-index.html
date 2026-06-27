@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Teleonomic Index — a structured reference of concepts and frameworks underpinning Dressage for the Future.">
+<link rel="canonical" href="https://www.dressageforthefuture.com/teleonimic-index.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<title>Teleonomic Index | Dressage for the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F6F3EE;--cream-dark:#EAE5DC;--forest:#1C1C28;--forest-mid:#2A2A3A;--forest-light:#484858;--gold:#3A6FA8;--gold-light:#5A8FCA;--gold-pale:#C5D5E8;--blue:#6B8CAE;--blue-light:#8EC5FF;--bronze:#8B6350;--ink:#1A1A22;--ink-soft:#3C3C4E;--mist:#9A9AAA;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:62px;border-bottom:2px solid var(--gold);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;letter-spacing:.06em;color:var(--cream);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;margin-left:2rem;}
+.nav-links a{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;white-space:nowrap;transition:color .3s;}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-contact{color:var(--gold)!important;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+.gold-rule{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.article-hero{padding:9rem 8% 4.5rem;background:var(--forest);position:relative;}
+.article-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.section-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block;}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--cream);max-width:800px;margin-bottom:1rem;}
+.article-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--gold-pale);opacity:.9;max-width:680px;margin-top:.5rem;}
+.article-body{max-width:740px;margin:0 auto;padding:5rem 8%;}
+.article-body p{margin-bottom:1.6rem;color:var(--ink-soft);}
+.article-body h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--forest);margin:3.5rem 0 1.2rem;line-height:1.2;border-left:2px solid var(--gold);padding-left:1.2rem;}
+.article-body h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--forest);margin:2.5rem 0 .6rem;}
+.article-body a{color:var(--forest);border-bottom:1px solid var(--gold);text-decoration:none;transition:color .3s;}
+.article-body a:hover{color:var(--gold);}
+.entry{padding:2rem 0;border-bottom:1px solid var(--cream-dark);}
+.entry:last-child{border-bottom:none;}
+.entry-term{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--forest);margin-bottom:.4rem;}
+.entry-tag{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-bottom:.8rem;display:block;}
+.entry-def{font-size:.95rem;color:var(--ink-soft);line-height:1.7;}
+.pull-quote{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;font-weight:300;color:var(--ink);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:2rem 0;margin:3rem 0;line-height:1.5;}
+.alpha-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:2.5rem 0 3rem;}
+.alpha-nav a{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.15em;color:var(--gold);border:1px solid var(--gold-pale);padding:.3rem .7rem;text-decoration:none;transition:all .3s;}
+.alpha-nav a:hover{background:var(--forest);color:var(--gold-pale);border-color:var(--forest);}
+footer{background:var(--ink);padding:3.5rem 8% 2.5rem;}
+.footer-inner{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(58,111,168,.15);margin-bottom:1.5rem;}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:.5rem;}
+.footer-brand p{font-size:.9rem;color:var(--mist);max-width:360px;line-height:1.6;}
+.footer-social{margin-top:1rem;}
+.footer-social a{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);text-decoration:none;border-bottom:1px solid rgba(155,155,170,.3);padding-bottom:2px;transition:color .3s;}
+.footer-social a:hover{color:var(--gold-pale);}
+.footer-nav h4{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.footer-nav ul{list-style:none;}
+.footer-nav li{margin-bottom:.5rem;}
+.footer-nav a{font-size:.9rem;color:var(--mist);text-decoration:none;transition:color .3s;}
+.footer-nav a:hover{color:var(--gold-pale);}
+.footer-bottom{display:flex;justify-content:space-between;font-size:.7rem;color:var(--mist);font-family:'Cinzel',serif;letter-spacing:.1em;opacity:.4;flex-wrap:wrap;gap:.5rem;}
+@media(max-width:800px){
+  nav{padding:0 1.5rem;}.nav-links{display:none;}
+  .article-hero{padding:7rem 6% 3rem;}.article-body{padding:3.5rem 6%;}
+  .footer-inner{flex-direction:column;}.footer-bottom{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Dressage for the Future</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+    <li><a href="research.html">Research</a></li>
+        
+    <li><a href="correspondence.html">Correspondence</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <span class="section-label">Reference</span>
+  <h1 class="article-title">Teleonomic Index</h1>
+  <p class="article-subtitle">A structured reference of concepts, terms, and frameworks used across this work — from biology and welfare science to training theory and institutional analysis.</p>
+</div>
+<div class="gold-rule"></div>
+
+<div class="article-body">
+
+  <p>Dressage for the Future draws on a range of disciplines — ethology, neurobiology, biomechanics, welfare science, philosophy of mind, and institutional critique — that do not always share a common vocabulary. This index provides working definitions of the key terms and concepts used across the essays, articles, and correspondence published here.</p>
+
+  <p>The concepts in this index underpin a practical instrument for evaluating horse management: the <a href="tfi.html">Equine Teleonomic Fulfilment Index (TFI)</a> — a 20-question tool that estimates what proportion of a horse's evolved opportunities remain available under its current management system.</p>
+
+  <p>These are not dictionary definitions. They are the specific sense in which each term is used in this work, which may differ from or extend beyond common usage. Entries are grouped thematically rather than alphabetically, and cross-referenced where relevant.</p>
+
+  <div class="pull-quote">Precision of language is a precondition for honest argument. If the terms of a debate cannot be defined, the debate cannot be resolved.</div>
+
+  <h2>I. Teleonomy and Biological Purpose</h2>
+
+  <div class="entry">
+    <div class="entry-term">Teleonomy</div>
+    <span class="entry-tag">Biology · Philosophy of Science</span>
+    <p class="entry-def">The property of living systems that makes them appear goal-directed or purposive, without requiring the attribution of conscious intention. Coined by Colin Pittendrigh (1958) and developed by Ernst Mayr, teleonomy distinguishes the goal-directedness of biological processes — migration, wound healing, instinctive behaviour — from teleology (which implies design or foresight). A teleonomic system operates according to a coded programme that directs the organism toward functional outcomes. In this work, teleonomy is used as a framework for understanding horse behaviour and movement as programme-driven rather than arbitrary — meaning that apparent "resistances" in training may be functional biological responses, not deficiencies of submission.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Biological programme</div>
+    <span class="entry-tag">Ethology · Behavioural Science</span>
+    <p class="entry-def">The encoded suite of instructions — genetic, epigenetic, developmental, and learned — that direct an organism's behaviour. Biological programmes generate species-typical responses to stimuli that are consistent, predictable, and functionally meaningful. In horses, these include flight responses, pain avoidance, postural adjustments, and social signalling. A training methodology that works against biological programmes creates conflict; one that works within them creates cooperation.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Functional behaviour</div>
+    <span class="entry-tag">Ethology · Welfare Science</span>
+    <p class="entry-def">Behaviour that serves a biological or adaptive purpose for the animal. In the context of ridden horses, conflict behaviours — tail wringing, teeth grinding, tongue over the bit, head tossing — are functional: they communicate discomfort, resist restriction, or attempt to relieve pressure. Treating functional behaviours as training problems to be suppressed, rather than signals to be interpreted, removes information from the system and does not resolve the underlying cause.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Teleonomic assessment</div>
+    <span class="entry-tag">Framework</span>
+    <p class="entry-def">An evaluation framework used in this work that asks, for any training method or piece of equipment: does this work with or against the horse's biological programme? This is not an appeal to nature in the philosophical sense — not everything natural is beneficial, and not everything artificial is harmful. It is a functional question: does the intervention produce a response that is consistent with the horse's adaptive repertoire, or does it override, suppress, or circumvent it?</p>
+  </div>
+
+  <h2>II. Sentience and Welfare</h2>
+
+  <div class="entry">
+    <div class="entry-term">Sentience</div>
+    <span class="entry-tag">Philosophy of Mind · Welfare Science</span>
+    <p class="entry-def">The capacity to have subjective experiences — to feel, in the broadest sense. In animal welfare science and law, sentience is increasingly defined as the capacity to experience positive and negative affective states, including pain, fear, pleasure, and frustration. The recognition of sentience in domestic animals — codified in the Cambridge Declaration on Consciousness (2012) and progressively embedded in national welfare frameworks — carries the implication that the subjective experience of an animal is morally relevant and must be considered when designing interventions that affect it.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Affective state</div>
+    <span class="entry-tag">Welfare Science · Neuroscience</span>
+    <p class="entry-def">An internal state that influences behaviour through valence — positive or negative felt quality. Hunger, fear, pain, and contentment are affective states. Welfare science now recognises that affective states are neurobiologically real in non-human animals and are not simply inferred from behaviour — they can be measured through physiological markers (cortisol, heart rate variability, eye white index) and validated through preference and judgement bias tests. In this work, affective state is used to evaluate training outcomes that cannot be assessed from performance scores alone.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Bodily integrity</div>
+    <span class="entry-tag">Welfare Ethics · Policy</span>
+    <p class="entry-def">The principle that an animal's body — including its mucosal, neurologically sensitive, and intimately functional regions — constitutes a morally significant boundary. Interventions that breach bodily integrity (insertion of devices into the oral cavity, sustained pressure on mucosal tissue) are qualitatively different from those that act on external surfaces, because the tissues involved are densely innervated, autonomically connected, and evolved for voluntary functions including eating, breathing, and communication. Bodily integrity in this sense goes beyond the absence of visible injury.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Welfare baseline</div>
+    <span class="entry-tag">Welfare Science</span>
+    <p class="entry-def">The condition of the animal in the absence of any human intervention — the reference point from which departures are measured. In ridden horse welfare, establishing a welfare baseline is complicated by the fact that no aspect of competitive equestrian sport involves an unmodified animal. Saddling, bridling, trimming, stabling, and feeding are all departures from the feral baseline. The question is not whether the baseline has been altered, but whether alterations are proportionate, reversible, and accompanied by corresponding welfare benefits.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Normal sensation</div>
+    <span class="entry-tag">Policy Analysis</span>
+    <p class="entry-def">A term used in EA dressage regulations: "Any attempt to alter the normal sensation of the horse for performance enhancement will not be tolerated." In this work, the term is examined critically — not because the principle is wrong, but because it is undefined. All ridden equipment alters sensation. The question is what the regulatory baseline is, and why some alterations (bits, nosebands, spurs) are permissible while others are prohibited, in the absence of a stated definition. See: <a href="correspondence.html">Correspondence with EA</a>.</p>
+  </div>
+
+  <h2>III. Training and Biomechanics</h2>
+
+  <div class="entry">
+    <div class="entry-term">Training scale</div>
+    <span class="entry-tag">Classical Dressage · Biomechanics</span>
+    <p class="entry-def">The progressive framework — rhythm, suppleness, contact, impulsion, straightness, collection — used in classical and modern dressage to describe the development of a trained horse. In this work, the training scale is taken seriously as a welfare-relevant framework: a horse that moves with genuine rhythm and suppleness is, by definition, in a state of lower muscular tension and greater comfort than one that does not. The critique is not of the training scale itself but of competition environments that produce scores consistent with the scale while permitting conditions inconsistent with the welfare outcomes the scale implies.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Contact</div>
+    <span class="entry-tag">Training Theory · Policy</span>
+    <p class="entry-def">In dressage, the maintained, elastic connection between the rider's hands and the horse's mouth (or, in bitless work, the horse's head). In conventional dressage rules, contact is defined with reference to the bit — creating a circularity in which the absence of a bit is interpreted as an absence of contact. In this work, and following the KNHS model, contact is defined as a quality of communication — light, elastic, responsive — that is independent of the hardware through which it is achieved.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Resistance</div>
+    <span class="entry-tag">Training Theory · Ethology</span>
+    <p class="entry-def">In conventional training discourse, any behaviour that does not comply with the rider's aid. In this work, resistance is interpreted through a teleonomic lens: most behaviours described as resistance are functional responses — to discomfort, confusion, fear, or physical limitation — and carry information about the horse's state. The suppression of resistance without addressing its cause resolves the visible signal without resolving the underlying condition.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Cooperation</div>
+    <span class="entry-tag">Framework</span>
+    <p class="entry-def">A mode of interaction between horse and rider in which the horse participates in and contributes to the task, rather than merely complying under pressure. Cooperation is behaviourally distinguishable from compliance: a cooperative horse offers behaviour, indicates preferences, and engages with training as a positive experience. A compliant horse performs under aversive control and may show welfare compromise that is invisible in the performance score. The distinction matters because the stated ideals of classical dressage — lightness, harmony, willingness — describe cooperation, not compliance.</p>
+  </div>
+
+  <h2>IV. Institutional and Policy Analysis</h2>
+
+  <div class="entry">
+    <div class="entry-term">Social licence</div>
+    <span class="entry-tag">Sport Governance · Ethics</span>
+    <p class="entry-def">The ongoing, informal consent of the broader public for an activity or industry to continue operating. Social licence is not a legal construct but a practical one: industries that lose public confidence face regulatory pressure, withdrawal of sponsorship, declining participation, and eventual legislative intervention. Equestrian sport's social licence is contingent on its ability to demonstrate that horse welfare is genuinely prioritised — not merely asserted. The argument here is that mandatory equipment requirements without a welfare basis erode that licence.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Rule without welfare basis</div>
+    <span class="entry-tag">Policy Analysis</span>
+    <p class="entry-def">A rule that cannot be shown to produce a welfare benefit, and whose purpose is therefore either traditional (it has always been so), aesthetic (it looks like dressage), or competitive (it standardises equipment to equalise competition). Rules without welfare basis are not necessarily harmful, but they become problematic when they prohibit equipment that may reduce welfare risk, or when they are cited as welfare-protective when no evidence supports that characterisation.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Hardware-neutral judging</div>
+    <span class="entry-tag">Competition Policy</span>
+    <p class="entry-def">An approach to dressage judging in which scores are awarded for the quality of training, movement, and communication between horse and rider, irrespective of the equipment used. Adopted by the Dutch federation (KNHS) for bitless classes, hardware-neutral judging holds that the training scale describes qualities that can be assessed without reference to whether a bit is present. This work argues that hardware-neutral judging is consistent with the original principles of dressage and is a prerequisite for any meaningful comparison of bitted and bitless performance.</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Accountability gap</div>
+    <span class="entry-tag">Institutional Analysis</span>
+    <p class="entry-def">The discrepancy between an institution's stated welfare commitments and its capacity (or willingness) to substantiate, enforce, or be questioned about them. In correspondence with EA, the FEI, and DAFF documented in this work, questions about the welfare basis for specific rules have not received substantive responses. The accountability gap is not assumed to reflect bad faith; it may reflect institutional inertia, resource constraints, or the absence of processes for engaging with welfare challenges of this kind. It is documented here because the gap itself is relevant to the welfare debate.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dressage for the Future</h3>
+      <p>Research, ethics, and the future of horse sport.</p>
+      <div class="footer-social" style="margin-top:1.2rem;">
+        <p style="font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Follow Dressage for the Future</p>
+        <div style="display:flex;flex-direction:column;gap:.4rem;">
+          <a href="https://www.facebook.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128248; Facebook</a>
+          <a href="https://www.instagram.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#128247; Instagram</a>
+          <a href="https://x.com/dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#10006; X</a>
+          <a href="https://www.threads.net/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#129525; Threads</a>
+          <a href="https://substack.com/@dressageforthefuture" target="_blank" rel="noopener" style="color:var(--mist);text-decoration:none;font-size:.9rem;">&#9998; Substack</a>
+        </div>
+        <p style="font-family:'Cinzel',serif;font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);opacity:.45;margin-top:.8rem;">Research &middot; Essays &middot; Daily Updates &middot; Horse Welfare</p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essays.html">Essays</a></li>
+    <li><a href="teleonomic-fulfilment.html">Framework</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="correspondence.html">Correspondence</a></li>
+        <li><a href="teleonimic-index.html">Teleonomic Index</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Dressage for the Future</span>
+    <span>Canberra, Australia</span>
+  </div>
+</footer>
+</body>
+</html>
